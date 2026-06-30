@@ -20,7 +20,7 @@ GitHub repo (the home of this collection): `oolio-group/oolio-pm-plugins` (priva
 ### A2. Add this folder
 1. In GitHub Desktop, top menu: **File → Add Local Repository**.
 2. Click **Choose…** and select this folder:
-   `Documents/Claude/personas/_PLUGIN-DELIVERY/oolio-pm-plugins`
+   `Documents/Claude/Code/oolio-pm-plugins`
 3. Click **Add Repository**. (I've already prepared it as a repository, so this just works.)
 
 ### A3. Publish it to GitHub
@@ -91,5 +91,5 @@ The bundled versions inside **oolio-pm** replace both.
 
 ## Notes
 
+- **Can Cowork push for me now?** Yes. GitHub access is set up on Niel's Mac (the `gh` CLI is authenticated), so Cowork can commit and push this repo directly when asked. GitHub Desktop still works as the buttons-only alternative if you prefer to review changes visually before they go up. Either route is fine; do not run both at once on the same change.
 - **Why not Claude Code?** Claude Code is a Terminal tool for developers. For just publishing this folder, GitHub Desktop does the same job with buttons. You can learn Claude Code later if you want; you don't need it for this.
-- **Why can't Cowork push for me?** Cowork can edit your files but has no access to your GitHub login, so it can't push. GitHub Desktop runs on your Mac as you, so it can.

@@ -84,6 +84,8 @@ The Chair writes the success criteria with the decision owner before any lens ru
 
 ## Review output format
 
+The full canonical layout — exact section order, status lozenge vocabulary, register ID scheme, and the per-persona / per-lens / per-seat breakdown — lives in the convene-vpc skill at `skills/convene-vpc/references/decision-record-format.md`. The headings below are the short list; follow the reference for the detail.
+
 ### Summary judgement
 Looping, not yet done / Done and verified / Approve / Approve with changes / Reject / Needs validation. If looping, the review is not finished and re-enters.
 

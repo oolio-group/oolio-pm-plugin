@@ -51,7 +51,7 @@ Do not leave the loop until every line is true:
 
 ## Output: the decision record
 
-Write the record in the Chair's format (`${CLAUDE_PLUGIN_ROOT}/personas-library/product-council-chair.md`). It is written to the Decision Log child page, not to the PRD body:
+Write the record in the council's standard decision-record format. The full layout — exact section order, status lozenge vocabulary, register ID scheme, and the per-persona / per-lens / per-seat breakdown — is defined in `${CLAUDE_PLUGIN_ROOT}/skills/convene-vpc/references/decision-record-format.md`. Follow it exactly; it is the source of truth for the format. The Chair file (`${CLAUDE_PLUGIN_ROOT}/personas-library/product-council-chair.md`) carries the short heading list below. The record is written to the Decision Log child page, not to the PRD body:
 
 - Summary judgement: Looping (not yet done) / Done and verified / Approve / Approve with changes / Reject / Needs validation.
 - Key decision required, in one sentence.
@@ -119,3 +119,7 @@ Alongside the Decision Log page, on every completed run:
 ## Running a single subcommittee
 
 If the user only wants one panel (for example "run the Design Council over this frame"), skip the orchestration and invoke that child skill directly. Same parts, narrower width. Still define done and verify before recording, and still follow the Confluence write protocol if you write anything back.
+
+## References
+
+- `references/decision-record-format.md` — the standard decision-record output format: section order, status lozenge vocabulary, register ID scheme, and the per-persona / per-lens / per-seat breakdown. The source of truth for what a record looks like.
