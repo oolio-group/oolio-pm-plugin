@@ -6,6 +6,25 @@ The Product team's plugin collection (marketplace) for Cowork. Other Oolio teams
 
 - **oolio-pm** — Oolio Product Management. Bundles the Virtual Product Council (convene-vpc and its operator, design, leadership, and STORM subcommittees, plus a snapshot of the persona library), the JPD grooming loop (jpd-loop) and idea groomer (jpd-idea-groomer), and the Jira epic helpers (jira-epic-groomer, jira-epic-titler). Self-contained.
 
+## Install in Cowork (for Oolio teammates)
+
+Most people will use this in Cowork, not Claude Code. This is the one-time setup.
+
+**Before you start, you need two things:**
+
+1. **Access to this repo.** It is private, so your GitHub account must be a member of the `oolio-group` organisation with read access to `oolio-pm-plugins`. If Cowork cannot find the repo when you add it, this is almost always why. Ask Niel or your GitHub admin to add you.
+2. **GitHub connected to your Cowork.** Connect your GitHub account inside Cowork once, so it is allowed to read the repo.
+
+**Then install:**
+
+1. In Cowork, open **Settings → Plugins → Add plugin → GitHub**.
+2. Enter `oolio-group/oolio-pm-plugins`.
+3. Install **oolio-pm**.
+
+The plugin's skills then appear in your skill list (for example, ask "convene the VPC"). Whenever a new version is pushed to GitHub, Cowork offers it as an update on its next sync.
+
+> Note: the exact menu wording in Cowork may differ slightly from the steps above. The first teammate to install should confirm the real path and tell Niel, so this section can be corrected.
+
 ## Layout
 
 ```
