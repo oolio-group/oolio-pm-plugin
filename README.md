@@ -31,16 +31,19 @@ The plugin's skills then appear in your skill list (for example, ask "convene th
 oolio-pm-plugins/
 ├── marketplace.json        the marketplace manifest Cowork reads
 ├── README.md
+├── CHANGELOG.md            what changed in each version
+├── CLAUDE.md               maintenance rules (bump version, log changes, archive)
 ├── PUBLISHING.md           how to edit, version, and publish (read this)
 └── oolio-pm/               the plugin
     ├── .claude-plugin/plugin.json
     ├── personas-library/   bundled persona-library snapshot
+    ├── _archive/           retired skills, lenses, and templates (kept for reference)
     └── skills/             the 9 skills
 ```
 
 ## Updating
 
-See **PUBLISHING.md** for the full step-by-step. In short: edit the skill under `oolio-pm/skills/`, bump the version in both `marketplace.json` and `oolio-pm/.claude-plugin/plugin.json`, then commit and push from GitHub Desktop. Cowork picks up the new version on its next sync.
+See **PUBLISHING.md** for the full step-by-step. In short: edit the skill under `oolio-pm/skills/`, bump the version in both `marketplace.json` and `oolio-pm/.claude-plugin/plugin.json`, add a **CHANGELOG.md** entry, then commit and push. Cowork picks up the new version on its next sync. Maintenance rules are in **CLAUDE.md**.
 
 ## Notes
 

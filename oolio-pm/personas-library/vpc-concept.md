@@ -25,7 +25,7 @@ We already have the parts. They live in `personas/`.
 | Subcommittee 1, Operator Council | `uat-panel/` | Would real users accept this |
 | Subcommittee 2, Design Council | `design-council/` | Is the design sound by expert principles |
 | Subcommittee 3, Leadership Subcommittee | `leadership-subcommittee/` | Should we invest, can we sell, support, deliver |
-| Subcommittee 4, STORM Subcommittee | `storm-subcommittee/` | Have we researched this, grounded and from every perspective |
+| Subcommittee 4, STORM Subcommittee | the `storm-research` skill | Have we researched this, grounded and from every perspective |
 | The cross-cutting map | `segments.md` | Pull personas by segment and vertical |
 | The reference set | `_framework/` | What Oolio is, how we segment, the templates |
 | The index and house rules | `personas.md` | The human-readable index |

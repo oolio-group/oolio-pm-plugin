@@ -45,14 +45,15 @@ personas/
 │   ├── _leadership-subcommittee-template.md
 │   └── ...                         one file per executive and commercial lens
 │
-├── storm-subcommittee/             SUBCOMMITTEE 4: the STORM Subcommittee (research)
-│   ├── README.md                   purpose, membership, how to run a review
-│   ├── _storm-subcommittee-template.md
-│   └── ...                         one file per STORM research lens
+│                                   SUBCOMMITTEE 4: the STORM Subcommittee (research) is now
+│                                   run by the storm-research skill. Its original Co-STORM
+│                                   role files are archived in ../_archive/storm-subcommittee/.
 │
 └── _archive/                       retired personas, kept for reference
     └── organisations/              retired. business-level view now in segments.md
 ```
+
+The plugin also keeps a top-level archive at `oolio-pm/_archive/` for retired skills, lenses, and templates beyond personas. The STORM Subcommittee's Co-STORM role files live there.
 
 ---
 
@@ -63,11 +64,11 @@ personas/
 | Operator Council | `uat-panel/` | Would our real users accept this, and does it survive a Friday night | Hospitality user personas |
 | Design Council | `design-council/` | Is the design sound by expert principles | Expert design and research lenses |
 | Leadership Subcommittee | `leadership-subcommittee/` | Should we invest in this, what risk are we taking, and can we sell, support and deliver it | Executive and commercial lenses |
-| STORM Subcommittee | `storm-subcommittee/` | Have we researched this widely, from perspectives we did not think of, grounded in real sources | Research and perspective-discovery lenses |
+| STORM Subcommittee | the `storm-research` skill | Have we researched this widely, from perspectives we did not think of, grounded in real sources | A five-lens, citation-verified research pipeline (role files archived) |
 
 Three of these are review panels that test a decision. Each holds the floor on its own ground. The Operator Council holds operational reality. The Design Council holds design quality. The Leadership Subcommittee holds commercial and executive judgement.
 
-The STORM Subcommittee is different in kind. It is a research engine, modelled on the Stanford OVAL STORM and Co-STORM method. It runs at the front of the loop, researches the topic, discovers the perspectives, grounds the evidence, and hands the Chair a cited briefing so the testing panels argue from evidence rather than assumption. It can be re-entered whenever a clash exposes an evidence gap. A serious decision is researched by STORM and then tested by the other three.
+The STORM Subcommittee is different in kind. It is a research engine, modelled on the Stanford OVAL STORM and Co-STORM method. It runs at the front of the loop, researches the topic, discovers the perspectives, grounds the evidence, and hands the Chair a cited briefing so the testing panels argue from evidence rather than assumption. It can be re-entered whenever a clash exposes an evidence gap. A serious decision is researched by STORM and then tested by the other three. STORM is now executed by the **`storm-research` skill**, not by role files in this folder; the original Co-STORM role files are archived in `../_archive/storm-subcommittee/`.
 
 The Domain Expert Council (product, BA, data, implementation, architecture, support detail) is named in the framework and may be built next, as a further subcommittee, following the same pattern.
 
@@ -153,7 +154,7 @@ The principle holds at every size. Name the decision, convene the lenses that ma
 These sit on top of the house rules in `personas.md`. Read both.
 
 1. **British English only. No em dashes. No buzzwords.** If a sentence could come out of a generic SaaS deck, rewrite it.
-2. **Use the right template.** User personas use `_framework/persona-template.md`. Design Council lenses use `design-council/_design-council-template.md`. Leadership Subcommittee lenses use `leadership-subcommittee/_leadership-subcommittee-template.md`. STORM Subcommittee lenses use `storm-subcommittee/_storm-subcommittee-template.md`. Fill every section. Empty sections are not allowed.
+2. **Use the right template.** User personas use `_framework/persona-template.md`. Design Council lenses use `design-council/_design-council-template.md`. Leadership Subcommittee lenses use `leadership-subcommittee/_leadership-subcommittee-template.md`. (The STORM Subcommittee is now the `storm-research` skill, so it has no lens template here; its archived template is in `../_archive/storm-subcommittee/`.) Fill every section. Empty sections are not allowed.
 3. **One file per lens or persona. Update, do not duplicate.** No v1, v2. Edit the file. Retire to `_archive/` with a note, never delete.
 4. **The Chair stays elevated.** Do not file the Chair inside a subcommittee. The Chair sits on all of them.
 5. **Lenses must disagree.** When you add a lens, name the gap it fills and the lens it argues with. A panel that all agrees is useless.

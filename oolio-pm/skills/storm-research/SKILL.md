@@ -46,7 +46,7 @@ Spawn **five `general-purpose` agents in a single message** so they run concurre
 
 When all five return, post a 2-3 line note in chat: which way they converge, and the sharpest disagreement. Keep raw briefs out of chat (the agents already returned them).
 
-**Swapping the panel (council mode, or domain topics).** The five lenses above are the default and fit broad market, technology, and strategy topics. When `convene-vpc` supplies a domain panel, or the topic is a specific internal product decision where Economist/Historian add little, replace one or more lenses with the relevant Oolio lenses from `${CLAUDE_PLUGIN_ROOT}/personas-library/storm-subcommittee/` and ground the framing in `${CLAUDE_PLUGIN_ROOT}/personas-library/_framework/oolio-context.md`. Keep five lenses, keep them adversarial, and keep the exact return shape.
+**Swapping the panel (council mode, or domain topics).** The five lenses above are the default and fit broad market, technology, and strategy topics. When `convene-vpc` supplies a domain panel, or the topic is a specific internal product decision where Economist/Historian add little, replace one or more lenses with the relevant Oolio lenses from the persona library (`${CLAUDE_PLUGIN_ROOT}/personas-library/` — the Operator Council, Design Council, and Leadership Subcommittee) and ground the framing in `${CLAUDE_PLUGIN_ROOT}/personas-library/_framework/oolio-context.md`. Keep five lenses, keep them adversarial, and keep the exact return shape.
 
 ## Phase 2: Map the contradictions
 

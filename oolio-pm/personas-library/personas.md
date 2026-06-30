@@ -68,10 +68,9 @@ personas/
 │   ├── README.md               purpose, membership, how to run a review
 │   ├── _leadership-subcommittee-template.md
 │   └── (sixteen executive and commercial lens files)
-├── storm-subcommittee/         SUBCOMMITTEE 4, the STORM Subcommittee: research and perspective lenses
-│   ├── README.md               purpose, membership, how to run a review
-│   ├── _storm-subcommittee-template.md
-│   └── (five STORM research lens files)
+│                               SUBCOMMITTEE 4, the STORM Subcommittee, is now run by the
+│                               `storm-research` skill. Its original Co-STORM role files are
+│                               archived in `../_archive/storm-subcommittee/`.
 └── _archive/                   retired personas, kept for reference
     └── organisations/          retired. business-level view now in segments.md
 ```
@@ -81,7 +80,7 @@ Four subcommittees, one elevated Chair, and a cross-cutting map:
 1. **Operator Council (UAT panel).** The hospitality user personas: individual human users of Oolio's products and services, grouped by role (owners and executives, general managers, front of house, back of house). This is our user-acceptance lens, and where almost all current user personas live. See `uat-panel/README.md`.
 2. **Design Council.** Expert lenses, inspired by the published work of real design and research practitioners, used to attack every new feature before it ships. These are not people we build for, they are design philosophies we validate against, chosen to disagree with each other. See `design-council/README.md`.
 3. **Leadership Subcommittee.** Executive and commercial lenses (CPO, CEO, CFO, CRO, and the functional leads) that judge whether a direction is worth investing in, and whether it can be sold, supported, and delivered. These are role lenses, not named individuals. See `leadership-subcommittee/README.md`.
-4. **STORM Subcommittee.** Research lenses modelled on the Stanford OVAL STORM and Co-STORM method. Where the other three test a decision, STORM researches it first: it discovers perspectives, grounds claims in real sources, and surfaces the unknown unknowns, then hands the Chair a cited briefing so the testing panels argue from evidence. See `storm-subcommittee/README.md`.
+4. **STORM Subcommittee.** The council's research arm, modelled on the Stanford OVAL STORM and Co-STORM method. Where the other three test a decision, STORM researches it first: it discovers perspectives, grounds claims in real sources, and surfaces the unknown unknowns, then hands the Chair a cited briefing so the testing panels argue from evidence. This is now run by the **`storm-research` skill**; the original five Co-STORM role files are archived in `../_archive/storm-subcommittee/`.
 5. **Product Council Chair.** The elevated role that sits on every subcommittee, adjudicates the master council, and turns the argument into a decision record. Not filed inside any subcommittee. See `product-council-chair.md`.
 6. **Segments and verticals.** The cross-cutting map. Personas live once by role in the UAT panel, and `segments.md` pulls them through by size-segment (independent, small group, mid-market, enterprise) and by vertical (cafe, fine dining, pub, QSR, and so on). It also shows the coverage gaps and maps to the JPD business-segment field. See `segments.md`.
 
@@ -100,7 +99,7 @@ The standing vocabulary for calling the panels. Use these terms and the right gr
 | **"UAT panel"**, "the Operator Council", "the users", "the operators" | All hospitality user personas (`uat-panel/`, every role group) |
 | **"Design Council"**, "the Council", "the experts", "the lenses" | All twelve expert lenses (`design-council/`) |
 | **"Leadership Subcommittee"**, "the leadership panel", "the commercial table", "the exec lenses" | The default nine leadership lenses plus the Chair (`leadership-subcommittee/`), and any conditional lenses the decision touches |
-| **"STORM"**, "the STORM Subcommittee", "research this", "ground this", "what are we missing" | The five STORM research lenses (`storm-subcommittee/`), run as the research loop before the testing panels |
+| **"STORM"**, "the STORM Subcommittee", "research this", "ground this", "what are we missing" | The `storm-research` skill, run as the research loop before the testing panels |
 | **"the Chair"**, "the Product Council Chair", "the adjudicator" | The elevated Chair (`product-council-chair.md`), always present in any review |
 | **"the master council"**, "the town hall", "full council" | All four subcommittees together, chaired by the Product Council Chair |
 | **"both"**, "personas", "everyone", "the full library", "full review" | All four subcommittees together, plus the Chair |
@@ -220,17 +219,9 @@ Convene the default nine plus the Chair for most reviews, and add conditional le
 
 ## The STORM Subcommittee
 
-The research and perspective-discovery body, modelled on the Stanford OVAL STORM and Co-STORM method. Where the other three subcommittees test a decision, STORM researches it first, so the council argues from grounded evidence and from perspectives we had not thought to take. It runs at the front of the loop and hands the Chair a cited briefing. It can be re-entered whenever a clash exposes an evidence gap. These are research-role lenses, not user personas and not named individuals.
+The research and perspective-discovery body, modelled on the Stanford OVAL STORM and Co-STORM method. Where the other three subcommittees test a decision, STORM researches it first, so the council argues from grounded evidence and from perspectives we had not thought to take. It runs at the front of the loop and hands the Chair a cited briefing. It can be re-entered whenever a clash exposes an evidence gap.
 
-The five roles run together as a pipeline, not as independent opinions. The full method, how to run a STORM review, and the source papers are in `storm-subcommittee/README.md`.
-
-| Lens | Role | File |
-|---|---|---|
-| Perspective Discoverer | Finds the angles nobody thought to take | [storm-subcommittee/perspective-discoverer.md](storm-subcommittee/perspective-discoverer.md) |
-| Question-Asking Researcher | Interrogates each perspective, drives depth | [storm-subcommittee/question-asking-researcher.md](storm-subcommittee/question-asking-researcher.md) |
-| Grounded Expert | Answers only from citable sources | [storm-subcommittee/grounded-expert.md](storm-subcommittee/grounded-expert.md) |
-| Knowledge Curator | Organises findings into a shared, cited structure | [storm-subcommittee/knowledge-curator.md](storm-subcommittee/knowledge-curator.md) |
-| Moderator | Surfaces the unknown unknowns | [storm-subcommittee/moderator.md](storm-subcommittee/moderator.md) |
+STORM is now run by the **`storm-research` skill**, which executes a five-lens, citation-verified research pipeline and returns a grounded briefing (in council mode, key decisions for the Chair to record). The original five Co-STORM role files (Perspective Discoverer, Question-Asking Researcher, Grounded Expert, Knowledge Curator, Moderator) are retired and kept for reference in [`../_archive/storm-subcommittee/`](../_archive/storm-subcommittee/README.md). To invoke STORM, call the `storm-research` skill rather than reading the role files.
 
 ---
 
