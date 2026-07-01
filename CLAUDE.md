@@ -5,7 +5,7 @@ Rules for anyone (human or AI) changing this repo. This is the **oolio-pm** plug
 ## On every change — do all four, every time
 
 1. **Make the change** under `oolio-pm/` (skills in `oolio-pm/skills/`, personas in `oolio-pm/personas-library/`).
-2. **Bump the version** in **both** `marketplace.json` (the plugin's `version`) and `oolio-pm/.claude-plugin/plugin.json` — they must match. Last number = fix or wording, middle = new ability or skill, first = a big change to how it is used.
+2. **Bump the version** in **both** `.claude-plugin/marketplace.json` (the plugin's `version`) and `oolio-pm/.claude-plugin/plugin.json` — they must match. Last number = fix or wording, middle = new ability or skill, first = a big change to how it is used.
 3. **Add a CHANGELOG entry.** Update [CHANGELOG.md](CHANGELOG.md) with a new section for the version, newest first, saying what changed and why. This is not optional. A version bump without a changelog entry is an incomplete change.
 4. **Commit and push.** Both steps, so GitHub (and teammates' Cowork) actually get it.
 

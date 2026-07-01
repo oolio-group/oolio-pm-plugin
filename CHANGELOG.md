@@ -1,8 +1,15 @@
 # Changelog
 
-All notable changes to the **oolio-pm** plugin, newest first. The version here matches the `version` in `marketplace.json` and `oolio-pm/.claude-plugin/plugin.json`. Every release updates this file (see [CLAUDE.md](CLAUDE.md)).
+All notable changes to the **oolio-pm** plugin, newest first. The version here matches the `version` in `.claude-plugin/marketplace.json` and `oolio-pm/.claude-plugin/plugin.json`. Every release updates this file (see [CLAUDE.md](CLAUDE.md)).
 
 Versioning: last number = fix or wording, middle = new ability or skill, first = a big change to how the plugin is used.
+
+## 0.3.2 — 2026-07-01
+
+Fix: marketplace manifest location.
+
+- Moved `marketplace.json` to `.claude-plugin/marketplace.json`. Cowork looks for the marketplace manifest at `.claude-plugin/marketplace.json`; at the repo root it was not detected ("This repository isn't a marketplace"). This is what lets teammates add the marketplace.
+- Updated the README, PUBLISHING, and CLAUDE maintenance rules to point at the new path.
 
 ## 0.3.1 — 2026-07-01
 

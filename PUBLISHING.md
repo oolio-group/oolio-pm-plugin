@@ -46,7 +46,7 @@ Open a Cowork chat and tell me what to change, e.g. *"Edit the jpd-loop skill in
 ### Step 2 — Bump the version (Cowork — just ask)
 Ask me to *"bump the plugin version."* I update it in **both** files (they must match):
 
-- `marketplace.json` → the plugin's `version`
+- `.claude-plugin/marketplace.json` → the plugin's `version`
 - `oolio-pm/.claude-plugin/plugin.json` → `version`
 
 Version rules (simple):
