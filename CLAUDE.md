@@ -2,6 +2,10 @@
 
 Rules for anyone (human or AI) changing this repo. This is the **oolio-pm** plugin collection for Cowork. Read [README.md](README.md) for what it is and [PUBLISHING.md](PUBLISHING.md) for how it ships. House style everywhere: British English, no em dashes, no buzzwords.
 
+## This repo is the single source of truth
+
+All edits to the `oolio-pm` plugin — skills, personas, lenses, templates — are made **here**, in this repo, then shipped. This includes the persona library at `oolio-pm/personas-library/`, which is canonical. Do not edit the installed Cowork copy, and do not edit the older working copy at `~/Documents/Claude/personas/` (it is a legacy mirror; a change made there does not ship). If content needs to change, change it here and follow the four steps below.
+
 ## On every change — do all four, every time
 
 1. **Make the change** under `oolio-pm/` (skills in `oolio-pm/skills/`, personas in `oolio-pm/personas-library/`).

@@ -4,6 +4,13 @@ All notable changes to the **oolio-pm** plugin, newest first. The version here m
 
 Versioning: last number = fix or wording, middle = new ability or skill, first = a big change to how the plugin is used.
 
+## 0.3.4 — 2026-07-01
+
+Governance: this repo is the single source of truth.
+
+- Declared in `CLAUDE.md` that all plugin edits (skills, personas, lenses, templates) are made in this repo and shipped from here; the bundled `oolio-pm/personas-library/` is canonical.
+- Put a redirect banner on the legacy working copy at `~/Documents/Claude/personas/` so edits are not made there by mistake.
+
 ## 0.3.3 — 2026-07-01
 
 Docs: repo renamed and made public.
