@@ -6,6 +6,7 @@ A single Cowork plugin bundling Oolio's product-management skills. Install it on
 
 **Discovery and grooming**
 
+- `feedback-to-idea` — turns raw customer, support, or sales signal into a JPD idea (or attaches it to an existing one), de-duped against the whole backlog.
 - `jpd-loop` — runs the full Virtual Product Council grooming loop over one JPD idea, end to end, and writes the result back to Jira. Depends on the council skills and `jpd-idea-groomer`, both bundled here.
 - `jpd-idea-groomer` — brings a JPD idea up to Oolio's JPD Field Standards.
 - `jpd-title-standard` — grooms JPD idea titles to the JPD Title Standard (max 65 characters, sentence case, capability-led with a clear outcome). Works on pasted text, a single idea, or in bulk via JQL.
@@ -29,6 +30,11 @@ A single Cowork plugin bundling Oolio's product-management skills. Install it on
 - `gtm-handover` — the executive GTM handover: One-Pager and Supporting Deck, and the `pack_content.json` narrative the other GTM skills read.
 - `gtm-playbooks` — the internal Sales, Account Management, and Onboarding playbooks.
 - `gtm-marketing` — the Marketing Pack: launch announcement, social, email sequence, sales note, campaign brief.
+
+**Prioritisation and measurement**
+
+- `steering-pack` — builds a Steering-ready review pack over a backlog slice: fitness checks, VPC verdicts, asks, and a recommended order.
+- `metrics-review` — validates a launch against its PRD's success metrics, or runs a recurring product review, from real data (PostHog first).
 
 **Jira authoring helpers**
 

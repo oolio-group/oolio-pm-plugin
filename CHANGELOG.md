@@ -4,6 +4,15 @@ All notable changes to the **oolio-pm** plugin, newest first. The version here m
 
 Versioning: last number = fix or wording, middle = new ability or skill, first = a big change to how the plugin is used.
 
+## 0.8.0 — 2026-07-06
+
+Three new skills closing the intake, prioritisation, and measurement gaps. Nineteen skills total.
+
+- **New skill `feedback-to-idea`.** The intake end of discovery: raw customer/support/sales signal in (pasted feedback, Slack thread, HubSpot ticket, support trend), a well-formed JPD idea out — or, more often, the signal attached to an existing idea, because the skill de-dupes against the whole backlog before ever creating. Carries quotes verbatim, sets signal strength from actual evidence (never inflated), reuses jpd-idea-groomer's canonical field standards, supports bulk sweeps, and hands off to jpd-loop.
+- **New skill `steering-pack`.** Builds the Steering/roadmap review pack over a backlog slice: objective fitness checks (title standard, field completeness), VPC verdicts and rubric scores, a per-idea "ask" (an item with no ask does not belong in the pack), a recommended discussion order, and a not-fit list with owners. Published to Confluence append-only, summarised in chat. Reports and orders; the room decides.
+- **New skill `metrics-review`.** Closes the loop the PRD opened: launch validation against the PRD's own success metrics, or a recurring product review, from real data (PostHog MCP first, other connectors or user-supplied numbers marked as such). Every figure traces to a source and window; metrics whose measurement dependency does not exist are reported as Unmeasurable with an owner, never substituted with a vanity proxy.
+- Repo hygiene: untracked `.claude/settings.json` (machine-specific session permissions, not plugin content) and added `.claude/` to `.gitignore`.
+
 ## 0.7.0 — 2026-07-06
 
 Five new skills and a product-context scaffold: the definition and launch stages of the PM lifecycle join the toolkit. Sixteen skills total.
