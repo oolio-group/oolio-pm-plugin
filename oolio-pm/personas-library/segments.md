@@ -25,6 +25,7 @@ The dominant axis. Targeting an account tier convenes this column.
 | Bella Ricci | FOH manager | Casual dining | [foh-manager-independent.md](uat-panel/front-of-house/foh-manager-independent.md) |
 | Tomás "Tom" Lavelle | Bar manager | Bar | [bar-manager-independent.md](uat-panel/front-of-house/bar-manager-independent.md) |
 | Marcus Whitehouse | Head chef | Fine dining | [head-chef-independent.md](uat-panel/back-of-house/head-chef-independent.md) |
+| Danielle "Dee" Alvarez | General Manager | Casual dining (United States) | [gm-casual-dining-us.md](uat-panel/general-managers/gm-casual-dining-us.md) |
 
 ### Small group (2 to 8 venues, founder-and-ops)
 
@@ -38,6 +39,7 @@ The dominant axis. Targeting an account tier convenes this column.
 | Ahmed Khalil | Line cook (CDP) | Casual dining | [line-cook.md](uat-panel/back-of-house/line-cook.md) |
 | Deng Akok | Team member, in-store | Takeaway and pizza | [team-member-pizza.md](uat-panel/back-of-house/team-member-pizza.md) |
 | Helena Mendes | Group stock and purchasing | Mixed | [stock-controller-multisite.md](uat-panel/back-of-house/stock-controller-multisite.md) |
+| Lucy Tran | Finance manager | Mixed | [finance-manager-bookkeeper.md](uat-panel/back-of-house/finance-manager-bookkeeper.md) |
 
 ### Mid-market group (9 to 50 venues, functional committee)
 
@@ -48,8 +50,9 @@ Newly opened up by the QSR franchise group. A nine-restaurant McDonald's franchi
 | Raymond "Ray" Tan | Franchisee / MD | QSR | [franchisee-owner-qsr.md](uat-panel/owners-and-executives/franchisee-owner-qsr.md) |
 | Stephanie "Steph" Nguyen | Restaurant manager | QSR | [restaurant-manager-qsr.md](uat-panel/general-managers/restaurant-manager-qsr.md) |
 | Kai Williams | Crew member | QSR | [crew-member-qsr.md](uat-panel/front-of-house/crew-member-qsr.md) |
+| Sofia Marchetti | Kitchen operations director | Casual dining | [kitchen-operations-director-midmarket.md](uat-panel/back-of-house/kitchen-operations-director-midmarket.md) |
 
-Helena Mendes (small group) is also written as edging into this tier. Back of house at mid-market remains uncovered.
+Helena Mendes (small group) is also written as edging into this tier.
 
 ### Enterprise chain (50+ venues, procurement-led)
 
@@ -60,6 +63,10 @@ Helena Mendes (small group) is also written as edging into this tier. Back of ho
 | Priya Sharma | FOH manager | Pub and hotel | [foh-manager-enterprise.md](uat-panel/front-of-house/foh-manager-enterprise.md) |
 | Karl Becker | Bar manager | Pub and hotel | [bar-manager-enterprise.md](uat-panel/front-of-house/bar-manager-enterprise.md) |
 | Andrew Pickering | Head chef | Pub and hotel | [head-chef-enterprise.md](uat-panel/back-of-house/head-chef-enterprise.md) |
+| Devinder "Dev" Chandra | IT and systems manager | Pub and hotel | [it-systems-manager-enterprise.md](uat-panel/owners-and-executives/it-systems-manager-enterprise.md) |
+| Michael "Mick" Torrance | Catering director | Stadia, events, convention | [catering-director-stadium.md](uat-panel/owners-and-executives/catering-director-stadium.md) |
+| Danielle "Dani" Hartigan | Venue operations manager | Stadia, events, convention | [venue-operations-manager-stadium.md](uat-panel/general-managers/venue-operations-manager-stadium.md) |
+| Josh Bennett | Bar supervisor, event-day frontline | Stadia, events, convention | [bar-supervisor-stadium.md](uat-panel/front-of-house/bar-supervisor-stadium.md) |
 
 ---
 
@@ -70,13 +77,13 @@ The operating model of the venue. Targeting a vertical convenes this row.
 | Vertical | Personas | Coverage |
 |---|---|---|
 | **Cafe** | Mel Sutton (owner) | Thin. Owner only, no frontline. |
-| **Casual dining** | Bella Ricci (FOH), Ahmed Khalil (line cook); plus Damien and Helena via mixed estates | Moderate. |
+| **Casual dining** | Bella Ricci (FOH), Ahmed Khalil (line cook), Sofia Marchetti (kitchen ops director, mid-market), Dee Alvarez (GM, US); plus Damien and Helena via mixed estates | Moderate to strong, now with group-level BOH and a US GM. |
 | **Fine dining** | Sam Patel (GM), Marcus Whitehouse (head chef) | Independent only, no group-scale. |
 | **Bar** | Tomás Lavelle (bar manager); Jess Carmody trades as pub | Thin. |
-| **Pub and hotel** | Caz, Liam, Priya, Karl, Andrew (full enterprise set); Jess at small group | Strong at enterprise, thin below it. |
+| **Pub and hotel** | Caz, Liam, Priya, Karl, Andrew, Dev Chandra (full enterprise set including the IT buyer); Jess at small group | Strong at enterprise, thin below it. |
 | **QSR** | Ray Tan (franchisee), Steph Nguyen (restaurant manager), Kai Williams (crew) | Covered, owner to frontline. McDonald's benchmark. |
 | **Takeaway and pizza** | Nick Castellano (franchisee), Mia Roberts (store manager), Deng Akok (team member), Pavel Novak (delivery driver) | Covered, owner to last mile, including delivery. Domino's benchmark. |
-| **Stadia, events, convention** | None | Gap. Held open deliberately, to be built later. |
+| **Stadia, events, convention** | Mick Torrance (catering director), Dani Hartigan (venue ops manager), Josh Bennett (bar supervisor) | Covered executive to frontline at a single contract-catered Australian stadium (invented benchmark). Stadium kitchen/BOH still open. |
 
 Damien O'Brien and Helena Mendes operate across mixed formats, so they appear under more than one vertical by design.
 
@@ -88,17 +95,18 @@ The audit tool. Each cell should hold at least one persona for a segment we acti
 
 | Role group | Independent | Small group | Mid-market | Enterprise |
 |---|---|---|---|---|
-| **Owners and executives** | Mel Sutton | Damien O'Brien, Nick Castellano | Ray Tan | Caz Whitfield |
-| **General managers** | Sam Patel | Mia Roberts | Steph Nguyen | Liam Henderson |
-| **Front of house** | Bella Ricci, Tomás Lavelle | Jess Carmody, Pavel Novak | Kai Williams | Priya Sharma, Karl Becker |
-| **Back of house** | Marcus Whitehouse | Ahmed Khalil, Helena Mendes, Deng Akok | *(gap)* | Andrew Pickering |
+| **Owners and executives** | Mel Sutton | Damien O'Brien, Nick Castellano | Ray Tan | Caz Whitfield, Dev Chandra, Mick Torrance |
+| **General managers** | Sam Patel, Dee Alvarez | Mia Roberts | Steph Nguyen | Liam Henderson, Dani Hartigan |
+| **Front of house** | Bella Ricci, Tomás Lavelle | Jess Carmody, Pavel Novak | Kai Williams | Priya Sharma, Karl Becker, Josh Bennett |
+| **Back of house** | Marcus Whitehouse | Ahmed Khalil, Helena Mendes, Deng Akok, Lucy Tran | Sofia Marchetti | Andrew Pickering |
 
 ### What the grid is telling us
 
-- **Mid-market is now opened up, except back of house.** The QSR franchise group fills owners, GMs, and front of house at mid-market. The remaining hole is a mid-market back-of-house persona (a multi-restaurant kitchen or operations role).
-- **General managers are no longer only independent and enterprise.** Mia Roberts (small group) and Steph Nguyen (mid-market) fill the middle of that row.
-- **Two verticals closed.** QSR and takeaway and pizza now run owner to frontline. Only stadia, events and convention is left open, held deliberately for later.
-- **Geography is still concentrated.** Every persona is Australia, New Zealand, United Kingdom, or Ireland, and the new QSR and pizza personas are all Australian. No United States persona, despite US franchise QSR being a named segment in `_framework/segmentation.md`.
+- **Mid-market is now fully covered, owner to back of house.** The QSR franchise group fills owners, GMs, and front of house; Sofia Marchetti (kitchen operations director) closes the back-of-house cell.
+- **General managers are no longer only independent and enterprise.** Mia Roberts (small group) and Steph Nguyen (mid-market) fill the middle of that row, and Dee Alvarez adds a second independent GM in the US.
+- **Stadia is now partially closed.** Executive (Mick Torrance), operations manager (Dani Hartigan), and frontline (Josh Bennett) exist at one benchmark contract-catered Australian stadium. A stadium kitchen persona and a UK/US events persona remain open.
+- **The enterprise buyer side is part-closed.** The IT buyer exists (Dev Chandra, filed at the same invented estate as Caz Whitfield so the enterprise account is coherent), and finance is covered at small group (Lucy Tran). Enterprise procurement and enterprise finance remain open.
+- **Geography now includes the US.** Dee Alvarez (Austin) anchors the United States with a GM; a US owner and frontline persona remain to build. The remaining geography gap is Denmark/Europe.
 - **Franchise is now represented, and it changes the buyer.** The QSR and pizza personas are franchisor-mandated: the brand buys the platform, the franchisee operates it. This is a different buying motion from the owner-led and procurement-led paths, and it is captured in those persona files.
 
 ---
@@ -107,14 +115,18 @@ The audit tool. Each cell should hold at least one persona for a segment we acti
 
 So a discovery idea tagged with a business segment in JPD convenes the matching persona set here. The aim is a 1:1 match between the JPD picklist and the size-segment tiers below.
 
-| Library size-segment | JPD business-segment value | Status |
-|---|---|---|
-| Independent | *(to confirm against JPD picklist)* | Reconcile |
-| Small group | *(to confirm against JPD picklist)* | Reconcile |
-| Mid-market group | *(to confirm against JPD picklist)* | Reconcile |
-| Enterprise chain | *(to confirm against JPD picklist)* | Reconcile |
+**Reconciled 2026-07-06** against the live JPD `Applicable Segments` field (`customfield_11558`, project OHSI). The JPD picklist is vertical-flavoured, not size-tiered: `Cafe, QSR, Casual Dining, Pub, Bar, Hotel, Fine Dining, Franchise, Enterprise, Multi-location, Takeaway, Pizza, Bakery, Gaming Venue`. There are no Independent / Small group / Mid-market values, so the mapping rule (recorded here rather than forcing either side to change) is:
 
-**Reconcile-later note.** These labels currently follow `_framework/segmentation.md`, not JPD. On the next pass, read the actual JPD business-segment (and vertical) picklist values and set the labels above to match exactly, so a JPD field maps straight through to a persona set. If JPD uses different boundaries (for example a combined "SMB" tier), record the mapping rule here rather than forcing either side to change. The jpd-idea-groomer skill already sets a Segments field on ideas, so this map is what lets a groomed idea pull the right personas into a review.
+| JPD value | Convenes |
+|---|---|
+| `Enterprise` | The Enterprise chain tier (View 1) |
+| `Multi-location` | Small group and Mid-market tiers together |
+| `Franchise` | The franchise personas (Ray Tan, Nick Castellano and their venue staff) |
+| `Cafe`, `QSR`, `Casual Dining`, `Pub`, `Bar`, `Hotel`, `Fine Dining`, `Takeaway`, `Pizza` | The matching vertical row in View 2 (`Pub` and `Hotel` both map to the pub-and-hotel row; `Takeaway` and `Pizza` both map to takeaway and pizza) |
+| `Gaming Venue`, `Bakery` | No dedicated persona yet; convene the nearest vertical (pub-and-hotel for gaming, cafe for bakery) and note the gap |
+| *(none of Enterprise / Multi-location / Franchise selected)* | Default to the Independent tier |
+
+An idea's size tier is inferred from `Enterprise` / `Multi-location` / `Franchise`; its vertical from the rest. The jpd-idea-groomer skill sets this field on ideas, so a groomed idea pulls the right persona slice into a review through this table.
 
 ---
 
@@ -131,3 +143,4 @@ So a discovery idea tagged with a business segment in JPD convenes the matching 
 
 - 2026-06-24. Initial version. Replaces the retired `organisations/` folder as the business-level view. Claude, with Niel.
 - 2026-06-24. Added the QSR vertical (McDonald's benchmark: franchisee, restaurant manager, crew) and the takeaway and pizza vertical (Domino's benchmark: franchisee, store manager, in-store team member, delivery driver). Both verticals now covered. Mid-market tier opened up except back of house. Stadia held open. Claude, with Niel.
+- 2026-07-06. Added the stadia trio (Mick Torrance, Dani Hartigan, Josh Bennett at one benchmark stadium), the mid-market kitchen operations director (Sofia Marchetti, closing the BOH gap), the enterprise IT buyer (Dev Chandra), the small-group finance manager (Lucy Tran), and the first US persona (Dee Alvarez, GM, Austin). Reconciled View 4 against the live JPD Applicable Segments picklist and recorded the mapping rule. Claude, with Niel.

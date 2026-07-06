@@ -18,7 +18,7 @@ British English, no em dashes, no buzzwords. This panel does not debate button p
 
 Convene the default nine for most reviews: Chief Product Officer, Chief Executive Officer, Chief Financial Officer, Chief Revenue Officer, Customer Success Manager, Support Manager, CTO or Head of Engineering, Head of Design, Migration Lead.
 
-Add conditional lenses only when the decision touches their ground: Head of Sales, Implementation Lead, Marketing or GTM Lead, Partnerships and Integrations Lead, Data and Analytics Lead, Legal Risk and Compliance Lead, Security Lead. The triggers are in the README. Do not convene all sixteen on everything.
+Add conditional lenses only when the decision touches their ground: Head of Sales, Implementation Lead, Marketing or GTM Lead, Partnerships and Integrations Lead, Data and Analytics Lead, Legal Risk and Compliance Lead, Security Lead, Payments Risk Lead. The triggers are in the README. Do not convene all seventeen on everything.
 
 ## How to run it
 

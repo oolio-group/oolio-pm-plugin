@@ -10,10 +10,10 @@ This is the primary persona type in the library today. Almost every product deci
 
 | Category | What it covers |
 |---|---|
-| `owners-and-executives/` | The people who own the business or run it at executive level. Independent owner-operators, small group owners, enterprise COOs. |
-| `general-managers/` | The single most important persona category. The GM is where strategy meets the floor. Independent and enterprise versions. |
-| `front-of-house/` | FOH managers, bar managers, and the frontline bartender. The customer experience layer. |
-| `back-of-house/` | Head chefs, kitchen staff, stock control. The cost and quality layer. |
+| `owners-and-executives/` | The people who own the business or run it at executive level. Independent owner-operators, small group owners, enterprise COOs, the contract caterer's catering director who owns a stadium hospitality P&L, and the enterprise IT and systems manager (not an operator: the technology gatekeeper whose security, integration, and change-control review every enterprise deal must pass). |
+| `general-managers/` | The single most important persona category. The GM is where strategy meets the floor. Independent, enterprise, US, and stadium event-day versions. |
+| `front-of-house/` | FOH managers, bar managers, the frontline bartender, and the event-day stadium bar supervisor. The customer experience layer. |
+| `back-of-house/` | Head chefs, kitchen staff, stock control, the mid-market group kitchen operations director, and the finance manager and bookkeeper (head-office cost-and-control, alongside the stock controller: she reconciles sales, payouts, tips, and taxes at month-end, not during service). The cost and quality layer. |
 
 ---
 
@@ -46,9 +46,9 @@ To be filled as research and roadmap signal demands new personas:
 
 - A dedicated server (front-line, food-led) persona, if work on table service warrants it
 - Hotel F&B persona (separate from pub and hotel multi-revenue)
-- Stadia day-of-event operator persona
+- A stadium kitchen/BOH persona (the event-day operators now exist executive to frontline; the kitchen behind them does not)
 - Franchisee versus corporate operator distinction inside QSR
-- Procurement, IT and finance personas inside enterprise chains (these block deals)
+- Enterprise procurement and enterprise finance personas (the IT buyer now exists, and finance is covered at small group; the enterprise versions of procurement and finance still block deals)
 - Customer-facing personas (the diner, the punter, the punters' group) once consumer-facing experiences become a material part of the offer
 
 When one of these gets added, update `personas.md` and remove the line from this list.

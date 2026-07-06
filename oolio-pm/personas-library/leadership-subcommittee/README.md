@@ -34,6 +34,7 @@ The Product Council Chair used to sit in this group. The Chair has been elevated
 | Data and Analytics Lead | Measurement, events, reporting | Conditional | [data-analytics-lead.md](data-analytics-lead.md) |
 | Legal, Risk and Compliance Lead | Legal, regulatory, privacy, tax risk | Conditional | [legal-risk-compliance-lead.md](legal-risk-compliance-lead.md) |
 | Security Lead | Access, permissions, sensitive data | Conditional | [security-lead.md](security-lead.md) |
+| Payments Risk Lead | Fraud, chargeback, settlement, scheme, and onboarding risk | Conditional | [payments-risk-lead.md](payments-risk-lead.md) |
 
 ---
 
@@ -66,6 +67,7 @@ Only convene these lenses when the decision actually touches their ground. Pulli
 | Data and Analytics Lead | The decision affects reporting, events, metrics, product analytics, or measurement. |
 | Legal, Risk and Compliance Lead | The decision touches privacy, tax, payroll, payments, regulated reporting, contracts, or accessibility. |
 | Security Lead | The decision touches permissions, authentication, APIs, sensitive data, audit logs, or admin controls. |
+| Payments Risk Lead | The decision touches money movement, payment flows, refunds, settlement, or Oolio Pay. |
 
 ---
 
@@ -92,7 +94,7 @@ These sit on top of the house rules in `../personas.md` and the operating guide 
 1. **Lenses, not job descriptions.** Each file is a point of view a decision is tested against. It is a tool, not an org chart entry.
 2. **Functions, not named individuals.** These are roles (CPO, CFO, CRO). Do not attach a real person's name or invented quotes. The challenge questions are what the lens asks in a review.
 3. **Keep the panel balanced.** If you add a lens, name the gap it fills and the lens it argues with. A panel that all agrees is useless.
-4. **Default light, conditional on demand.** Do not run all sixteen lenses on every decision. Convene the nine defaults plus what the decision touches.
+4. **Default light, conditional on demand.** Do not run all seventeen lenses on every decision. Convene the nine defaults plus what the decision touches.
 
 ---
 

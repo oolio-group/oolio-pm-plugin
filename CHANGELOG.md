@@ -4,6 +4,18 @@ All notable changes to the **oolio-pm** plugin, newest first. The version here m
 
 Versioning: last number = fix or wording, middle = new ability or skill, first = a big change to how the plugin is used.
 
+## 0.9.0 — 2026-07-06
+
+Persona library expansion: seven new UAT personas, one leadership seat, two design lenses. Shipped via pull request rather than direct to main.
+
+- **Stadia trio** (the vertical segments.md held open for swiftpos's market, all at one invented benchmark stadium so the account is coherent): Michael "Mick" Torrance (catering director, contract-caterer P&L), Danielle "Dani" Hartigan (venue operations manager, event-day F&B), Josh Bennett (concourse bar supervisor, event-day frontline). Stadium kitchen/BOH deliberately left open.
+- **Mid-market back of house closed**: Sofia Marchetti, kitchen operations director of a 14-venue casual-dining group. The coverage grid no longer has an empty cell.
+- **Enterprise buyer side part-closed**: Devinder "Dev" Chandra, IT and systems manager (the enterprise deal gate: security, PCI scope, change control), filed at the same invented estate as the enterprise COO. Lucy Tran, finance manager and bookkeeper of a six-venue group (month-end close, payout reconciliation, tips and GST), filed in back-of-house beside the stock controller as head-office cost-and-control.
+- **First US persona**: Danielle "Dee" Alvarez, GM of a high-volume Austin smokehouse: tip pooling, sales tax, card-first payments, aggregator dominance. Exists to test whether AU/UK-shaped assumptions travel. (Nickname set to Dee to avoid colliding with Dani Hartigan; nicknames are the invoke-by-name handle.)
+- **New Leadership Subcommittee seat (conditional)**: Payments Risk Lead, the fraud/chargeback/settlement/PCI/onboarding-risk lens previously spread across CFO, Security, and Legal. Convened when a decision touches money movement, payment flows, refunds, settlement, or Oolio Pay.
+- **Two new Design Council lenses**: Edward Tufte (data and evidence display: dashboards, reporting, information density under pressure) and Ben Shneiderman (human-centred AI and control: comprehensible, predictable, controllable automation). Assignment matrix gains Dashboards-and-analytics and AI-suggestions rows, BackOffice reporting now carries Tufte, and the standing rule "always include Shneiderman on anything that recommends, drafts, or acts on the operator's behalf" is added. Both lenses build only on published work, no invented quotes, per the panel rule.
+- **Integration**: personas.md, segments.md (all four views), uat-panel/design-council/leadership READMEs, and both council skills updated; lens counts corrected (twelve to fourteen, sixteen to seventeen). segments.md View 4 is also now **reconciled against the live JPD Applicable Segments picklist** (fetched 2026-07-06) with an explicit mapping rule, closing the reconcile-later note from 2026-06-24.
+
 ## 0.8.0 — 2026-07-06
 
 Three new skills closing the intake, prioritisation, and measurement gaps. Nineteen skills total.
