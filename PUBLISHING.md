@@ -72,7 +72,7 @@ That's it. Steps 1–4 every release.
 
 1. Cowork → **Settings → Plugins → Add plugin → GitHub**.
 2. Enter `oolio-group/oolio-pm-plugin`.
-3. Install **oolio-pm**. Done — all nine skills appear.
+3. Install **oolio-pm**. Done — the full skill set appears (see the README for the current list).
 
 Every version you push then shows up as an available update for them.
 

@@ -25,18 +25,19 @@ The plugin's skills then appear in your skill list (for example, ask "convene th
 ## Layout
 
 ```
-oolio-pm-plugin/
+oolio-pm-plugins/           local folder name; the GitHub repo is oolio-group/oolio-pm-plugin
 ├── .claude-plugin/
 │   └── marketplace.json    the marketplace manifest Cowork reads (must live here)
 ├── README.md
 ├── CHANGELOG.md            what changed in each version
 ├── CLAUDE.md               maintenance rules (bump version, log changes, archive)
 ├── PUBLISHING.md           how to edit, version, and publish (read this)
+├── LICENSE                 usage terms (public repo, internal material)
 └── oolio-pm/               the plugin
     ├── .claude-plugin/plugin.json
     ├── personas-library/   bundled persona-library snapshot
     ├── _archive/           retired skills, lenses, and templates (kept for reference)
-    └── skills/             the 11 skills
+    └── skills/             the skills (count in oolio-pm/README.md)
 ```
 
 ## Updating

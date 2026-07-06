@@ -4,6 +4,16 @@ All notable changes to the **oolio-pm** plugin, newest first. The version here m
 
 Versioning: last number = fix or wording, middle = new ability or skill, first = a big change to how the plugin is used.
 
+## 0.5.1 — 2026-07-06
+
+Fixes from the full toolkit audit: missing reference files, stale docs, licence.
+
+- **Created the three `jpd-idea-groomer` reference files the skill has pointed at since 0.1.0 but which never existed**: `references/field_standards.md` (canonical field IDs and option labels, pulled from live Jira field metadata on 2026-07-06, including the real divergences from the Confluence wording such as `Product optimisation`, `FOH Staff`, the pipe-suffixed Delivery Size labels, and the second "Category" field to avoid), `references/examples.md` (strong/weak summary and description pairs across the typical idea shapes, plus field-setting examples), and `references/atlassian_mcp.md` (tool call shapes, write-back patterns, failure isolation, and traps).
+- Updated `oolio-pm/README.md` "What's inside" to list all eleven skills; `grill-me` and `jpd-title-standard` had been missing since 0.4.0/0.5.0. Fixed PUBLISHING.md's stale "all nine skills" line to defer to the README.
+- Fixed the root README layout diagram: the local folder is `oolio-pm-plugins` while the GitHub repo is `oolio-group/oolio-pm-plugin`; the diagram now says so instead of using the wrong name. The skill count in the diagram now defers to `oolio-pm/README.md` so it cannot go stale again.
+- Added a LICENSE: public visibility is for install convenience, not a licence to reuse; all rights reserved to Oolio Group.
+- Documented `metadata.version` in CLAUDE.md: it versions the marketplace itself and is only bumped when the marketplace structure changes, not on plugin releases.
+
 ## 0.5.0 — 2026-07-02
 
 New skill: `jpd-title-standard`.
