@@ -1,6 +1,6 @@
 # The Design Council
 
-A standing council of twelve design and research experts, convened as **lenses** to attack every new piece of Oolio functionality before it ships. It spans both craft (UI) and behaviour (UX), so a feature is judged on how it looks and how it works.
+A standing council of fourteen design and research experts, convened as **lenses** to attack every new piece of Oolio functionality before it ships. It spans both craft (UI) and behaviour (UX), so a feature is judged on how it looks and how it works.
 
 These are not user personas. The `uat-panel/` library answers "who are we building for". The Council answers "is what we built any good, and how do we know". Each lens is a design philosophy, inspired by the published work of a real practitioner. Their job is to disagree with each other, on purpose, so that a feature is stress-tested from a dozen directions before a customer ever touches it.
 
@@ -32,19 +32,23 @@ A named panel of lenses fixes this. When a reviewer says "I do not like this", t
 | Responsive and device fluidity | Ethan Marcotte | Does it hold across terminal, tablet, phone, kiosk, web | [ethan-marcotte.md](ethan-marcotte.md) |
 | Research sceptic | Erika Hall | What are we assuming, what question does this actually test | [erika-hall.md](erika-hall.md) |
 | Delight and trust | Aarron Walter | Does this feel trustworthy, are the error and empty states human | [aarron-walter.md](aarron-walter.md) |
+| Data and evidence display | Edward Tufte | Does the ink show the data, honestly and in context | [edward-tufte.md](edward-tufte.md) |
+| Human-centred AI and control | Ben Shneiderman | Is the automation comprehensible, predictable, under human control | [ben-shneiderman.md](ben-shneiderman.md) |
 
 ---
 
 ## How to run a Design Council review
 
-Do not run every feature through every lens. Twelve lenses on one feature is theatre, and it produces a contradictory mess no squad can act on. Assign **three mandatory lenses** and **two contextual lenses** per feature. Five voices, chosen for the surface.
+Do not run every feature through every lens. Fourteen lenses on one feature is theatre, and it produces a contradictory mess no squad can act on. Assign **three mandatory lenses** and **two contextual lenses** per feature. Five voices, chosen for the surface.
 
 ### The assignment matrix
 
 | Feature type | Mandatory lenses | Contextual lenses |
 |---|---|---|
 | POS order entry | Don Norman, Jakob Nielsen, Luke Wroblewski | Jony Ive, Kat Holmes |
-| BackOffice reporting | Alan Cooper, Kim Goodwin, Julie Zhuo | Erika Hall, Irene Au |
+| BackOffice reporting | Alan Cooper, Edward Tufte, Julie Zhuo | Kim Goodwin, Erika Hall |
+| Dashboards and analytics | Edward Tufte, Julie Zhuo, Alan Cooper | Erika Hall, Jony Ive |
+| AI suggestions, drafting, and recommendations | Ben Shneiderman, Erika Hall, Don Norman | Julie Zhuo, Aarron Walter |
 | Kiosk or guest ordering | Jony Ive, Aarron Walter, Kat Holmes | Ethan Marcotte, Luke Wroblewski |
 | Multi-venue configuration | Alan Cooper, Irene Au, Don Norman | Kim Goodwin, Jakob Nielsen |
 | Migration from Bepoz, Idealpos, SwiftPOS, OrderMate or Deliverit | Don Norman, Kat Holmes, Alan Cooper | Irene Au, Erika Hall |
@@ -52,7 +56,7 @@ Do not run every feature through every lens. Twelve lenses on one feature is the
 | KDS and kitchen flow | Don Norman, Kat Holmes, Jakob Nielsen | Alan Cooper, Ethan Marcotte |
 | Onboarding and account setup | Jakob Nielsen, Luke Wroblewski, Aarron Walter | Erika Hall, Kat Holmes |
 
-If a feature does not fit a row, pick the three lenses that map to its hardest design risk, and two that map to its likely failure under pressure. Always include at least one of Norman, Nielsen or Holmes on anything a frontline user touches during service. Always include Julie Zhuo or Erika Hall on anything where the team is confident but the evidence is thin.
+If a feature does not fit a row, pick the three lenses that map to its hardest design risk, and two that map to its likely failure under pressure. Always include at least one of Norman, Nielsen or Holmes on anything a frontline user touches during service. Always include Julie Zhuo or Erika Hall on anything where the team is confident but the evidence is thin. Always include Ben Shneiderman on anything that recommends, drafts, or acts on the operator's behalf. Tufte is a strong contextual pick on KDS work where the risk is information density under pressure.
 
 ### The steps
 

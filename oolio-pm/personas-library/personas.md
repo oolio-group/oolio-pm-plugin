@@ -63,11 +63,11 @@ personas/
 ├── design-council/             SUBCOMMITTEE 2, the Design Council: expert design lenses
 │   ├── README.md               the council rules and the assignment matrix
 │   ├── _design-council-template.md
-│   └── (twelve expert lens files)
+│   └── (fourteen expert lens files)
 ├── leadership-subcommittee/    SUBCOMMITTEE 3, the Leadership Subcommittee: executive and commercial lenses
 │   ├── README.md               purpose, membership, how to run a review
 │   ├── _leadership-subcommittee-template.md
-│   └── (sixteen executive and commercial lens files)
+│   └── (seventeen executive and commercial lens files)
 │                               SUBCOMMITTEE 4, the STORM Subcommittee, is now run by the
 │                               `storm-research` skill. Its original Co-STORM role files are
 │                               archived in `../_archive/storm-subcommittee/`.
@@ -97,7 +97,7 @@ The standing vocabulary for calling the panels. Use these terms and the right gr
 | When you say | What is convened |
 |---|---|
 | **"UAT panel"**, "the Operator Council", "the users", "the operators" | All hospitality user personas (`uat-panel/`, every role group) |
-| **"Design Council"**, "the Council", "the experts", "the lenses" | All twelve expert lenses (`design-council/`) |
+| **"Design Council"**, "the Council", "the experts", "the lenses" | All fourteen expert lenses (`design-council/`) |
 | **"Leadership Subcommittee"**, "the leadership panel", "the commercial table", "the exec lenses" | The default nine leadership lenses plus the Chair (`leadership-subcommittee/`), and any conditional lenses the decision touches |
 | **"STORM"**, "the STORM Subcommittee", "research this", "ground this", "what are we missing" | The `storm-research` skill, run as the research loop before the testing panels |
 | **"the Chair"**, "the Product Council Chair", "the adjudicator" | The elevated Chair (`product-council-chair.md`), always present in any review |
@@ -129,6 +129,8 @@ The hospitality user personas, grouped by role. This is the user-acceptance lens
 | Franchisee owner, QSR | Mid-market, 9-restaurant franchise (McDonald's benchmark) | [uat-panel/owners-and-executives/franchisee-owner-qsr.md](uat-panel/owners-and-executives/franchisee-owner-qsr.md) |
 | Franchisee owner, pizza | Small group, 3-store franchise (Domino's benchmark) | [uat-panel/owners-and-executives/franchisee-owner-pizza.md](uat-panel/owners-and-executives/franchisee-owner-pizza.md) |
 | Enterprise chain COO | Enterprise, 100+ venues | [uat-panel/owners-and-executives/enterprise-chain-coo.md](uat-panel/owners-and-executives/enterprise-chain-coo.md) |
+| IT and systems manager, enterprise | Enterprise, head-office deal gate | [uat-panel/owners-and-executives/it-systems-manager-enterprise.md](uat-panel/owners-and-executives/it-systems-manager-enterprise.md) |
+| Catering director, stadium | Enterprise, contract-catered stadium precinct (invented benchmark) | [uat-panel/owners-and-executives/catering-director-stadium.md](uat-panel/owners-and-executives/catering-director-stadium.md) |
 
 ### General managers
 
@@ -138,6 +140,8 @@ The hospitality user personas, grouped by role. This is the user-acceptance lens
 | Restaurant manager, QSR | Mid-market franchise restaurant (McDonald's benchmark) | [uat-panel/general-managers/restaurant-manager-qsr.md](uat-panel/general-managers/restaurant-manager-qsr.md) |
 | Store manager, pizza | Small-group franchise store (Domino's benchmark) | [uat-panel/general-managers/store-manager-pizza.md](uat-panel/general-managers/store-manager-pizza.md) |
 | GM, enterprise venue | Enterprise chain branch | [uat-panel/general-managers/gm-enterprise.md](uat-panel/general-managers/gm-enterprise.md) |
+| Venue operations manager, stadium | Enterprise, contract-catered stadium (invented benchmark) | [uat-panel/general-managers/venue-operations-manager-stadium.md](uat-panel/general-managers/venue-operations-manager-stadium.md) |
+| GM, casual dining (US) | Independent, high volume, United States | [uat-panel/general-managers/gm-casual-dining-us.md](uat-panel/general-managers/gm-casual-dining-us.md) |
 
 ### Front of house
 
@@ -150,6 +154,7 @@ The hospitality user personas, grouped by role. This is the user-acceptance lens
 | Bartender, frontline | Mixed | [uat-panel/front-of-house/bartender-frontline.md](uat-panel/front-of-house/bartender-frontline.md) |
 | Crew member, QSR | Mid-market franchise, frontline (McDonald's benchmark) | [uat-panel/front-of-house/crew-member-qsr.md](uat-panel/front-of-house/crew-member-qsr.md) |
 | Delivery driver, pizza | Small-group franchise, last mile (Domino's benchmark) | [uat-panel/front-of-house/delivery-driver-pizza.md](uat-panel/front-of-house/delivery-driver-pizza.md) |
+| Bar supervisor, stadium | Enterprise, event-day frontline (invented benchmark) | [uat-panel/front-of-house/bar-supervisor-stadium.md](uat-panel/front-of-house/bar-supervisor-stadium.md) |
 
 ### Back of house
 
@@ -160,6 +165,8 @@ The hospitality user personas, grouped by role. This is the user-acceptance lens
 | Kitchen line cook | Mixed | [uat-panel/back-of-house/line-cook.md](uat-panel/back-of-house/line-cook.md) |
 | Team member, in-store pizza | Small-group franchise, makeline (Domino's benchmark) | [uat-panel/back-of-house/team-member-pizza.md](uat-panel/back-of-house/team-member-pizza.md) |
 | Stock controller, multi-site | Small group and enterprise | [uat-panel/back-of-house/stock-controller-multisite.md](uat-panel/back-of-house/stock-controller-multisite.md) |
+| Kitchen operations director, mid-market | Mid-market group, 14 casual-dining venues | [uat-panel/back-of-house/kitchen-operations-director-midmarket.md](uat-panel/back-of-house/kitchen-operations-director-midmarket.md) |
+| Finance manager and bookkeeper | Small group, 6 venues | [uat-panel/back-of-house/finance-manager-bookkeeper.md](uat-panel/back-of-house/finance-manager-bookkeeper.md) |
 
 Frontline service staff (servers, runners) sit close enough to the bartender and FOH manager personas that they are covered there. If a discrete server persona is needed for a specific piece of work, add it.
 
@@ -167,7 +174,7 @@ Frontline service staff (servers, runners) sit close enough to the bartender and
 
 ## The Design Council
 
-The expert lenses we test features against. Twelve design and research philosophies, chosen to disagree, convened to review every feature alongside the hospitality personas. The hospitality personas hold the floor of operational reality. The Council raises the ceiling on design quality. A feature has to satisfy both.
+The expert lenses we test features against. Fourteen design and research philosophies, chosen to disagree, convened to review every feature alongside the hospitality personas. The hospitality personas hold the floor of operational reality. The Council raises the ceiling on design quality. A feature has to satisfy both.
 
 Do not run every feature past every lens. Assign three mandatory and two contextual lenses per feature, using the assignment matrix in `design-council/README.md`.
 
@@ -185,6 +192,8 @@ Do not run every feature past every lens. Assign three mandatory and two context
 | Responsive and device fluidity | Ethan Marcotte | [design-council/ethan-marcotte.md](design-council/ethan-marcotte.md) |
 | Research sceptic | Erika Hall | [design-council/erika-hall.md](design-council/erika-hall.md) |
 | Delight and trust | Aarron Walter | [design-council/aarron-walter.md](design-council/aarron-walter.md) |
+| Data and evidence display | Edward Tufte | [design-council/edward-tufte.md](design-council/edward-tufte.md) |
+| Human-centred AI and control | Ben Shneiderman | [design-council/ben-shneiderman.md](design-council/ben-shneiderman.md) |
 
 The panel rules, the feature-to-lens assignment matrix, the contradiction philosophy, and the decision rule (operational correctness beats aesthetic purity, learnability beats novelty, measurable user impact beats internal preference) all live in `design-council/README.md`.
 
@@ -214,6 +223,7 @@ Convene the default nine plus the Chair for most reviews, and add conditional le
 | Data and Analytics Lead | Conditional | [leadership-subcommittee/data-analytics-lead.md](leadership-subcommittee/data-analytics-lead.md) |
 | Legal, Risk and Compliance Lead | Conditional | [leadership-subcommittee/legal-risk-compliance-lead.md](leadership-subcommittee/legal-risk-compliance-lead.md) |
 | Security Lead | Conditional | [leadership-subcommittee/security-lead.md](leadership-subcommittee/security-lead.md) |
+| Payments Risk Lead | Conditional | [leadership-subcommittee/payments-risk-lead.md](leadership-subcommittee/payments-risk-lead.md) |
 
 ---
 

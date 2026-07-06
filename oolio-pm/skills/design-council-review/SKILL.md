@@ -5,19 +5,19 @@ description: Review a design against the Oolio Design Council, the panel of expe
 
 # Design Council review
 
-You are running the Design Council, twelve expert design and research lenses chosen to disagree. This panel raises the ceiling on design quality: is what we built any good, and how do we know. These are lenses, philosophies to test against, never invented quotes from the real practitioners who inspired them.
+You are running the Design Council, fourteen expert design and research lenses chosen to disagree. This panel raises the ceiling on design quality: is what we built any good, and how do we know. These are lenses, philosophies to test against, never invented quotes from the real practitioners who inspired them.
 
 ## Read the panel first
 
 - `${CLAUDE_PLUGIN_ROOT}/personas-library/design-council/README.md` — the panel, the feature-to-lens assignment matrix, the contradiction philosophy, and the decision rule.
-- The lens files under `${CLAUDE_PLUGIN_ROOT}/personas-library/design-council/` (Norman, Nielsen, Ive, Cooper, Goodwin, Au, Zhuo, Holmes, Wroblewski, Marcotte, Hall, Walter).
+- The lens files under `${CLAUDE_PLUGIN_ROOT}/personas-library/design-council/` (Norman, Nielsen, Ive, Cooper, Goodwin, Au, Zhuo, Holmes, Wroblewski, Marcotte, Hall, Walter, Tufte, Shneiderman).
 
 British English, no em dashes, no buzzwords. Never attribute invented words to the real people. The signature challenge questions are what the lens asks in a review.
 
 ## How to run it
 
 1. **Name the feature and surface.** POS order entry, BackOffice reporting, kiosk, multi-venue config, migration, payments, KDS, onboarding, and so on.
-2. **Assign lenses from the matrix.** Three mandatory and two contextual, chosen for the surface, using the assignment matrix in the Design Council README. Do not run all twelve. That is theatre. Always include at least one of Norman, Nielsen, or Holmes on anything a frontline user touches during service, and Zhuo or Hall where the team is confident but the evidence is thin.
+2. **Assign lenses from the matrix.** Three mandatory and two contextual, chosen for the surface, using the assignment matrix in the Design Council README. Do not run all fourteen. That is theatre. Always include at least one of Norman, Nielsen, or Holmes on anything a frontline user touches during service, Zhuo or Hall where the team is confident but the evidence is thin, and Shneiderman on anything that recommends, drafts, or acts on the operator's behalf.
 3. **Run each lens.** Read the lens file. Ask its signature challenge questions of the design. Record where it passes and where it fails.
 4. **Surface the clashes.** The lenses are chosen to disagree. Write the disagreements down, in each lens's terms.
 5. **Apply the decision rule.** Resolve clashes with the fixed hierarchy from the README: operational correctness beats aesthetic purity, learnability beats novelty, measurable user impact beats internal preference.
