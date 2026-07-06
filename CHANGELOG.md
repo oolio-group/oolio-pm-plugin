@@ -4,6 +4,15 @@ All notable changes to the **oolio-pm** plugin, newest first. The version here m
 
 Versioning: last number = fix or wording, middle = new ability or skill, first = a big change to how the plugin is used.
 
+## 0.9.1 — 2026-07-07
+
+Cache-bust: marketplace identity renamed to unstick Cowork's stale sync.
+
+- Niel reinstalled the plugin in Cowork and received v0.3.3 with nine skills — exactly the version at which the GitHub repo was renamed from `oolio-pm-plugins` to `oolio-pm-plugin` (2026-07-01). GitHub serves v0.9.0 correctly at HEAD, so the evidence points at Cowork's server-side marketplace cache having frozen at the rename, with remove/re-add resolving back to the same stale record.
+- **Renamed the marketplace itself** in `marketplace.json` from `oolio-pm-plugins` to `oolio-pm-plugin` (now matching the repo), bumping `metadata.version` to 2.0.0 per the maintenance rule. If Cowork keys its cache by marketplace name, adding the marketplace afresh now creates a new record and syncs from scratch.
+- Refreshed both manifest descriptions and the plugin keywords, which still described the eleven-skill era; they now describe the full nineteen-skill toolkit.
+- Anyone who installed under the old marketplace identity should remove the old marketplace entry in Cowork and add `oolio-group/oolio-pm-plugin` fresh.
+
 ## 0.9.0 — 2026-07-06
 
 Persona library expansion: seven new UAT personas, one leadership seat, two design lenses. Shipped via pull request rather than direct to main.

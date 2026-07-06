@@ -1,7 +1,7 @@
 {
   "name": "oolio-pm",
-  "version": "0.9.0",
-  "description": "Oolio Product Management. A bundle of Oolio's product-management skills: the Virtual Product Council (convene-vpc and its operator, design, leadership, and STORM subcommittees, with a snapshot of the persona library), the JPD grooming loop (jpd-loop), idea groomer (jpd-idea-groomer) and title standard (jpd-title-standard), the Jira epic helpers (jira-epic-groomer, jira-epic-titler), and grill-me for stress-testing a plan or decision. Groom discovery ideas, pressure-test decisions against personas and lenses, and keep Jira tidy to Oolio standards.",
+  "version": "0.9.1",
+  "description": "Oolio Product Management. The full PM toolkit, signal to shipped: intake raw feedback into JPD (feedback-to-idea), groom ideas to standard (jpd-idea-groomer, jpd-title-standard, jpd-loop), write and pressure-test PRDs (write-prd, grill-my-prd, grill-me), validate decisions against the Virtual Product Council and its persona library (convene-vpc + operator/design/leadership subcommittees, storm-research), keep Jira tidy (jira-epic-groomer, jira-epic-titler), prepare Steering (steering-pack), ship the GTM pack (gtm-handover, gtm-playbooks, gtm-marketing), and measure the result (metrics-review).",
   "author": {
     "name": "Niel Cody, Oolio Product"
   },
@@ -13,6 +13,10 @@
     "personas",
     "validation",
     "design-review",
-    "decision-record"
+    "decision-record",
+    "prd",
+    "gtm",
+    "steering",
+    "metrics"
   ]
 }
