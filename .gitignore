@@ -3,3 +3,4 @@
 .obsidian/
 *.bak-*
 .claude/
+dist/

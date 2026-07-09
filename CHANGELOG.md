@@ -4,6 +4,15 @@ All notable changes to the **oolio-pm** plugin, newest first. The version here m
 
 Versioning: last number = fix or wording, middle = new ability or skill, first = a big change to how the plugin is used.
 
+## 0.9.5 — 2026-07-09
+
+Distribution: the release zip is now the official install path; the Cowork marketplace path is retired until Anthropic fixes their cache.
+
+- All recovery steps for the marketplace cache are exhausted: both slugs are burnt (`oolio-pm-plugin` frozen at 0.3.3, `oolio-pm-plugins` at 0.5.0), the Update button does nothing, and remove-and-re-add resolves to the same stale record. Nothing pushed to GitHub changes what the marketplace serves.
+- Every release is now packaged as `oolio-pm-vX.Y.Z.zip` and attached to a GitHub Release, so anyone can grab the exact current version from the releases page and install it via Cowork's local plugin upload (the path proven working in the v0.9.3 test).
+- Added `scripts/package-plugin.sh` to build the zip (it refuses to package on a version mismatch between the two manifests). README and PUBLISHING.md rewritten to make the zip the primary path and warn away from the marketplace option.
+- Trade-off accepted: zip installs do not auto-update, so each release is announced and re-uploaded. When Anthropic fixes the cache, the marketplace path can come back.
+
 ## 0.9.4 — 2026-07-09
 
 Fix: two skills had unparseable YAML frontmatter and were shipping with empty metadata.

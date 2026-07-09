@@ -8,21 +8,13 @@ The Product team's plugin collection (marketplace) for Cowork. Other Oolio teams
 
 ## Install in Cowork (for Oolio teammates)
 
-Most people will use this in Cowork, not Claude Code. This is the one-time setup.
+Most people will use this in Cowork, not Claude Code. Install from the **release zip** — do not use Cowork's GitHub / marketplace option, which is stuck serving an old version (see [PUBLISHING.md](PUBLISHING.md), "Known issue").
 
-**Before you start:** connect your GitHub account inside Cowork once, so it can read the repo. The repo is public, so you do not need any special GitHub access or org membership.
+1. Download the latest `oolio-pm-vX.Y.Z.zip` from the [releases page](https://github.com/oolio-group/oolio-pm-plugin/releases/latest).
+2. In Cowork, open **Settings → Plugins → Add plugin → Upload local plugin** (exact wording may differ slightly) and upload the zip.
+3. Done. The plugin's skills appear in your skill list (for example, ask "convene the VPC").
 
-**Then install:**
-
-1. In Cowork, open **Settings → Plugins → Add plugin → GitHub**.
-2. Enter `oolio-group/oolio-pm-plugin`.
-3. Install **oolio-pm**.
-
-The plugin's skills then appear in your skill list (for example, ask "convene the VPC"). Whenever a new version is pushed to GitHub, Cowork offers it as an update on its next sync.
-
-> Note: the exact menu wording in Cowork may differ slightly from the steps above. The first teammate to install should confirm the real path and tell Niel, so this section can be corrected.
-
-> **If the installed version looks old:** Cowork caches this repo server-side and can serve a stale snapshot. The real current version is always the top entry of [CHANGELOG.md](CHANGELOG.md). Fix steps are in [PUBLISHING.md](PUBLISHING.md) under "Known issue".
+Updating is the same three steps with the new zip when Niel announces a release. The real current version is always the top entry of [CHANGELOG.md](CHANGELOG.md).
 
 ## Layout
 

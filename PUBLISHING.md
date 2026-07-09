@@ -8,6 +8,8 @@ This is the whole workflow for editing the **oolio-pm** plugin and getting a new
 
 GitHub repo (the home of this collection): `oolio-group/oolio-pm-plugin` (public).
 
+> **How distribution works right now (July 2026):** Cowork's marketplace install is broken for this repo — its server-side cache is frozen on old versions and nothing we do here can refresh it (details under "Known issue" below). Until Anthropic fixes it, **the official distribution channel is the release zip**: every version is packaged as `oolio-pm-vX.Y.Z.zip` and attached to a GitHub Release at https://github.com/oolio-group/oolio-pm-plugin/releases. Installing a zip via Cowork's local upload is proven to work and always gives the exact version. Do not use the marketplace path.
+
 ---
 
 ## A. One-time setup (only the very first time, ever)
@@ -61,30 +63,35 @@ Version rules (simple):
 3. Click **Commit to main**.
 4. Click **Push origin** (top right).
 
-### Step 4 — Tell your team
-Message them: *"oolio-pm v0.2.0 is out."* Their Cowork syncs and offers the update. To get it now, they go to **Settings → Plugins** and trigger a sync / update.
+### Step 4 — Cut the release zip (Cowork — just ask)
+Ask me to *"cut the release."* I run `scripts/package-plugin.sh` (it refuses to package if the two version numbers disagree) and publish a GitHub Release with the zip attached, so the team always has a one-click download of the exact current version at:
 
-That's it. Steps 1–4 every release.
+**https://github.com/oolio-group/oolio-pm-plugin/releases/latest**
 
-### Known issue — Cowork can serve a stale version
+If you'd rather do it by hand: run the script, then create a release on GitHub tagged `vX.Y.Z` and drag the zip from `dist/` onto it.
 
-Cowork's backend caches a snapshot of this repo per source URL, and as of July 2026 that snapshot is taken **once, when the marketplace is first added, and does not refresh on its own**. Remove-and-re-add reuses the same cached record. GitHub always serves the latest (check the real version any time at https://github.com/oolio-group/oolio-pm-plugin/blob/main/CHANGELOG.md).
+### Step 5 — Tell your team
+Message them: *"oolio-pm vX.Y.Z is out — grab the zip from the releases page and re-upload it in Cowork."* Upgrading is the same as installing (Part C); the new upload replaces the old version.
 
-If Cowork shows an older version than the CHANGELOG:
+That's it. Steps 1–5 every release.
 
-1. Open the plugin in **Settings → Plugins** and press **Update**.
-2. If that does nothing, remove the marketplace and re-add it under the slug you have NOT used before — both `oolio-group/oolio-pm-plugin` and `oolio-group/oolio-pm-plugins` point at the same repo (GitHub redirects), but Cowork caches them separately, and a never-used slug fetches today's HEAD.
-3. If both slugs are burnt, the fix sits with Anthropic (bug report filed; see the CHANGELOG for status). Do not judge the repo by what Cowork shows.
+### Known issue — the Cowork marketplace path is frozen (do not use it)
+
+Cowork's backend caches a snapshot of this repo per source URL, and as of July 2026 that snapshot is taken **once, when the marketplace is first added, and does not refresh on its own**. Remove-and-re-add reuses the same cached record; the Update button does nothing. Both slugs for this repo are burnt (`oolio-pm-plugin` is frozen at v0.3.3, `oolio-pm-plugins` at v0.5.0), so every marketplace install serves one of those stale versions no matter what we push. The fix sits with Anthropic (bug report filed; see the CHANGELOG for status).
+
+**The way around it is the release zip (Part C).** Local upload bypasses the marketplace cache entirely and was proven working in the v0.9.3 test. GitHub always serves the latest source (check the real version any time at https://github.com/oolio-group/oolio-pm-plugin/blob/main/CHANGELOG.md). Do not judge the repo by what the Cowork marketplace shows.
+
+The trade-off of the zip path: no automatic updates. Each new version is a fresh download-and-upload, which is why Step 5 (telling the team) matters. When Anthropic fixes the cache, we can switch back to the marketplace path with auto-updates; until then the zip is the truth.
 
 ---
 
-## C. How a teammate installs it (first time, on their machine)
+## C. How anyone installs or updates it (you and teammates alike)
 
-1. Cowork → **Settings → Plugins → Add plugin → GitHub**.
-2. Enter `oolio-group/oolio-pm-plugin`.
-3. Install **oolio-pm**. Done — the full skill set appears (see the README for the current list).
+1. Download the latest zip from **https://github.com/oolio-group/oolio-pm-plugin/releases/latest** (the file named `oolio-pm-vX.Y.Z.zip`).
+2. Cowork → **Settings → Plugins → Add plugin → Upload local plugin** (the exact wording may differ slightly) and upload the zip.
+3. Done — the full skill set appears (see the README for the current list).
 
-Every version you push then shows up as an available update for them.
+Updating to a new version is the same three steps with the new zip. Do **not** install via the GitHub / marketplace option — it serves a stale version (see the Known issue above).
 
 ---
 
