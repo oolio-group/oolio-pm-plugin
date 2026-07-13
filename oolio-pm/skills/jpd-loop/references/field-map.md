@@ -2,6 +2,8 @@
 
 Read this when you need the exact field IDs and select option IDs to write back to a JPD idea via `editJiraIssue`. Project **OHSI — Oolio One Ideas** (id `10052`), idea type `10071`, cloudId `98b2c73a-4f2e-4b23-aca7-dbc5b45b1e24`.
 
+Canonical statuses (2026-07-13): Captured → Exploring → Decision → `Ready for delivery` (lowercase d) → In Engineering; end states Shipped / Not Now / Rejected (Planning and Ready for Engineering no longer exist). Every backlog query carries the two guards from the groomer's field_standards.md (`issuetype = Idea` + archived filter). Escalate (`customfield_10432`) is a Polaris boolean stored as NUMBER — write `1`/`0`, never true/false. On Park, the human sets Revisit on (`customfield_11811`, Polaris date; automation/UI-owned).
+
 Select fields take the option **id** (preferred) or value. `VPC Reviewed` is a NUMBER (write `1` for true, `0` for false). Ratings are 1–5. Relationships use **native Jira issue links** (`createIssueLink`), not a field. The reporter-visible **Discovery Review** is appended to the idea **Description** (append-only) — there is no summary field.
 
 | Field | ID | Type |
@@ -13,7 +15,7 @@ Select fields take the option **id** (preferred) or value. `VPC Reviewed` is a N
 | Dedupe Status | `customfield_11667` | select |
 | Sign-off Status | `customfield_11668` | select |
 | Sign-off Owner | `customfield_11669` | MULTI-user array — write `[{"accountId":"..."}]` |
-| VPC Last Run | `customfield_11671` | date — REJECTS API writes in this instance ("N/A"). Leave unset and note the gap; do not block the run on it. |
+| VPC Last Run | `customfield_11671` | verified `jira.polaris:interval` (string) — plain-date API writes rejected; leave unset, do not retry, never block the run on it. (A JSON-string interval write was accepted in a 2026-07-13 test but UI rendering is unconfirmed — treat as unwritable until confirmed.) |
 | Escalation Reason | `customfield_11672` | select |
 | Desirability | `customfield_11673` | rating 1–5 |
 | Feasibility | `customfield_11674` | rating 1–5 |

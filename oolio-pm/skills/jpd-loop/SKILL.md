@@ -39,7 +39,7 @@ The loop gathers evidence from across the stack. Have these connected; if one is
 
 ## Environment (Oolio)
 - cloudId `98b2c73a-4f2e-4b23-aca7-dbc5b45b1e24`; project **OHSI — Oolio One Ideas** (`10052`); idea type `10071`.
-- Loop inbox/outbox statuses: `Exploring` → `Decision`.
+- Loop inbox/outbox statuses: `Exploring` → `Decision`. Post-Decision exit mapping (human executes): Proceed → `Ready for delivery` (lowercase d) · Park → `Not Now` + set Revisit on (`customfield_11811`) · Kill → `Rejected` · Duplicate → link + archive.
 - Field IDs and option IDs: see `references/field-map.md`. Skills: `jpd-idea-groomer`, `convene-vpc`.
 
 ## Guardrails (Phase 1 defaults)
@@ -57,7 +57,7 @@ The loop gathers evidence from across the stack. Have these connected; if one is
 Run `jpd-idea-groomer` to bring the idea to the JPD Field Standards (problem, hypothesis, success metrics, required fields). Programmatic gate: must be field-complete before the council runs.
 
 ### 2. Match & de-dupe (state `De-duping`)
-Search the **entire** backlog (all statuses) via `searchJiraIssuesUsingJql` + semantic match on problem/persona/area. Set `Dedupe Status` and create native issue links (`Relates`/`Duplicate`/`Blocks`). True duplicate → propose link + escalate, set `Halted — duplicate`, stop. Match further along the workflow → likely redundant, escalate, stop. Never merge yourself.
+Search the **entire** backlog (all statuses) via `searchJiraIssuesUsingJql` + semantic match on problem/persona/area — always with the two mandatory guards from the groomer's field_standards.md (`issuetype = Idea` + the live archived filter), or the sweep is polluted by Customer records and archived ideas. Set `Dedupe Status` and create native issue links (`Relates`/`Duplicate`/`Blocks`). True duplicate → propose link + escalate, set `Halted — duplicate`, stop. Match further along the workflow → likely redundant, escalate, stop. Never merge yourself.
 
 ### 3. Gather evidence & build Insights (state `In Council`)
 Gather evidence **for and against** the idea using the connectors and web — internal first (Oolio Brain, Confluence, Slack, HubSpot, M365), then external (web/competitors). For each strong item draft an **Insight**: one-line description + **real source URL** + **impact 1–5**. Keep a balanced set. Full method, rubric, and the brand/competitor wiki list are in `references/insights-and-citations.md` and `references/evidence-sources.md`. Never fabricate a link.
@@ -93,6 +93,7 @@ Present a concise summary: verdict, rubric, top objections, the Insight list, li
    connector cannot create native Polaris Insights.
 4. **Notify the reporter** (see Step 7a).
 5. Set `VPC Loop State = Done (Decision)`, `VPC Reviewed = 1`, then move `Exploring → Decision`.
+6. **If a matching delivery epic already exists** (found during evidence/de-dupe), offer to create the `Polaris work item link` (implements) idea → epic via `createIssueLink` — the delivery-link standard applies from `Ready for delivery` onward, and creating it now saves the Stage-6 backfill a row.
 
 **If a write-back step fails partway.** The five outputs above are ordered so the most important land first. If a step fails (a write is rejected, a page create errors, a field is not writable), do not unwind what already succeeded and do not silently skip the rest: complete the remaining steps that can still run, then report exactly which steps landed and which did not, with the error, so the human can finish by hand. Never leave the run looking complete when it is partial, and never retry a failed write blind; re-check the payload (labels, formats) against `references/field-map.md` first.
 

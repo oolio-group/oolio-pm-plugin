@@ -1,10 +1,23 @@
 # JPD Field Standards, canonical field IDs and option labels
 
-The single source of truth for writing custom fields back to Jira Product Discovery (project `OHSI`, "Oolio One Ideas", issue type `Idea`, id `10071`). Labels below were pulled from the live Jira field metadata on 2026-07-06. **Always send these exact strings.** The Confluence standard page describes intent; Jira enforces spelling. Where the two differ, this file wins.
+The single source of truth for writing custom fields back to Jira Product Discovery (project `OHSI`, "Oolio One Ideas", issue type `Idea`, id `10071`). Labels below were pulled from the live Jira field metadata on 2026-07-06 and re-verified 2026-07-13. **Always send these exact strings.** The Confluence standard page describes intent; Jira enforces spelling. Where the two differ, this file wins.
 
 Canonical rules page: https://oolio.atlassian.net/wiki/spaces/PM/pages/1055653929/Jira+Product+Discovery+JPD+Field+Standards
 
 If a write fails with an unhelpful error, the label is almost always the problem. Re-check here, or fetch a known populated idea (`OHSI-39`, `OHSI-45`, `OHSI-57`, `OHSI-72`, `OHSI-74`) and copy the exact string.
+
+## Canonical statuses and mandatory JQL guards
+
+**Statuses (as of 2026-07-13):** `Captured` → `Exploring` → `Decision` → `Ready for delivery` (lowercase d — send exactly this) → `In Engineering`, with end states `Shipped`, `Not Now`, `Rejected`. The former `Planning` and `Ready for Engineering` statuses were merged into `Ready for delivery` on 2026-07-13 and no longer exist.
+
+**Every backlog sweep, de-dupe search, or bulk query against OHSI MUST carry two guards:**
+
+1. `issuetype = Idea` — the project also contains `Customer` records (type id `10606`), which pollute any unguarded search.
+2. An archived filter on `Idea archived` (`customfield_10835`) — ~43 archived ideas otherwise inflate every result. The verified form (tested live, 2026-07-13) is `(cf[10835] IS EMPTY OR cf[10835] != Yes)`. The `IS EMPTY` clause is load-bearing: non-archived ideas hold the field empty, and JQL's `!=` excludes empties, so a bare `cf[10835] != Yes` silently returns **zero** ideas. The bracketed spellings (`"Idea archived[Select List (single choice)]"`, `"Idea archived[Dropdown]"`) match nothing in this instance; the plain name `"Idea archived"` works identically to `cf[10835]` if preferred.
+
+Base pattern: `project = OHSI AND issuetype = Idea AND (cf[10835] IS EMPTY OR cf[10835] != Yes) AND <your terms>`.
+
+**Exit mapping from the VPC verdict (Decision stage):** Proceed → `Ready for delivery` · Park → `Not Now` (+ set the Revisit on date, `customfield_11811`, see below) · Kill → `Rejected` · Duplicate → link to the surviving idea, then archive.
 
 ## Required fields
 
@@ -20,16 +33,18 @@ If a write fails with an unhelpful error, the label is almost always the problem
 
 Select at least one. Multiple only when genuinely relevant. Never all of them.
 
-### Category — `customfield_11553` (single-select)
+### Investment Type — `customfield_11553` (single-select)
+
+Renamed from "Category" on 2026-07-13. Describes where product effort is being invested. Same four options:
 
 - `Customer Problem`
 - `New Capability`
 - `Product optimisation` (lowercase o, exactly as written)
 - `Strategic investment` (lowercase i, exactly as written)
 
-Choose the primary category only.
+Choose the primary type only.
 
-**Warning: there are two Jira fields named "Category".** The standard's field is `customfield_11553`. The other (`customfield_11711`, options like POS, Payments, Reporting) belongs to the Requests intake view. Do not confuse them.
+**Note:** the only field still named "Category" in Jira is `customfield_11711` (options like POS, Payments, Reporting), which belongs to the Requests intake view. Never write `customfield_11711` from these skills; the standard's field is `customfield_11553` (Investment Type).
 
 ### Source — `customfield_11554` (multi-select)
 
@@ -124,9 +139,22 @@ Sentence case in Jira:
 - `Enterprise readiness`
 - `Platform adoption`
 
+### Horizon — `customfield_11744` (single-select)
+
+The roadmap-commitment axis, orthogonal to status (status = where the idea is in the discovery process; Horizon = when we intend to act). Options:
+
+- `Under consideration`
+- `Later`
+- `Next`
+- `Now`
+- `Shipped`
+- `Not planned`
+
+**Ownership rule: skills propose, Steering decides.** The groomer may propose a Horizon with a rationale, but never sets `Now`/`Next` without an explicit Steering decision or Niel's instruction. Do not use FY-quarter labels for roadmap timing — that is Horizon's job.
+
 ### Innovation — `customfield_10505` (rating, 1–5)
 
-Written as a bare number. The field's display name carries a leading space (` Innovation`) in Jira; write by ID, never by name. Rate honestly:
+Written as a bare number. (Display name was " Innovation" with a leading space until 2026-07-13, now fixed to "Innovation"; writing by ID remains safest.) Rate honestly:
 
 1. Parity / catch-up
 2. Incremental, common in market
@@ -173,13 +201,31 @@ Select the legacy products the idea materially supports migrating from. Leave em
 
 ### Escalate — `customfield_10432` (number/boolean tag)
 
-Set only for genuine executive or commercial urgency. If the API rejects the write, fall back to the JPD UI toggle and tell the user.
+Set only for genuine executive or commercial urgency. Schema verified 2026-07-13: `jira.polaris:boolean` stored as Jira type **number** — always write `1`/`0`, never `true`/`false` (the boolean form is the likely cause of historic rejections). If a `1`/`0` write is still rejected, fall back to the JPD UI toggle and tell the user; once one clean write is confirmed, remove this fallback sentence.
+
+### Likes — `customfield_11710` (number, read-only for skills)
+
+Drives voting on the public-facing portal. **Do not write, clear, or treat as unused.** The separate Jira `votes` system field is not used at Oolio and is not surfaced by JPD — ignore it entirely.
+
+### Revisit on — `customfield_11811` (Polaris date, verified attached)
+
+Powers the targeted Not Now bubble-up: set when parking an idea (JPD automation default: +90 days), and the quarterly sweep resurfaces only ideas whose date has passed. Verified 2026-07-13: attached to OHSI Ideas, schema `jira.polaris:interval`. Plain-date API writes are rejected; a JSON-string interval write (`{"start":"YYYY-MM-DD","end":"YYYY-MM-DD"}`) was accepted in testing but UI rendering is unconfirmed — treat writes as automation/UI-owned until confirmed. JQL clause `"Revisit on[Time stamp]" <= "YYYY-MM-DD"` parses; the sweep reads, never writes.
 
 ## VPC loop fields (written by jpd-loop, read-only here)
 
 These exist on the Idea type and are managed by the `jpd-loop` skill. The groomer should not set them, but should not clobber them either:
 
 `VPC Loop State` (`customfield_11663`), `VPC Reviewed` (`11664`), `VPC Iterations` (`11665`), `VPC Verdict` (`11666`), `Dedupe Status` (`11667`), `Sign-off Status` (`11668`), `Sign-off Owner` (`11669`), `VPC Last Run` (`11671`), `Escalation Reason` (`11672`), `Desirability` (`11673`), `Feasibility` (`11674`), `Viability` (`11675`), `Strategic Fit` (`11676`), `VPC Confidence` (`11677`).
+
+`VPC Last Run` (`11671`) is schema-verified as `jira.polaris:interval` (a string with undocumented serialization): API writes are rejected in this instance. **Verified, do not retry** — leave it unset and note the gap. The same applies to all Polaris date/interval fields (e.g. Project start/target).
+
+## Fields the API cannot see (dynamic fields)
+
+Formula fields (none currently in use; a scoring formula was ruled Won't Do on EVITA-81), `Delivery status` (`customfield_10844`), `Delivery progress` (`customfield_10843`), per-view rank, and insight *content* are never returned by the API — they read as null even when populated in the UI. Compute delivery state from `Polaris work item link` (implements) links instead, and treat the `Insights` count (`customfield_10840`, readable number) as the only API-visible insight signal.
+
+## Delivery linking standard
+
+From `Ready for delivery` onward, every idea carries at least one **`Polaris work item link` (implements)** to its delivery epic(s) — this is what the JPD Delivery tab renders and what the delivery automations key on. Links to INI (Initiatives) items are additional context, never a substitute. Create via `createIssueLink` with type `Polaris work item link`.
 
 ## Write-back shapes (editJiraIssue `fields` object)
 

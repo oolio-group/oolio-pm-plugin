@@ -28,7 +28,7 @@ A request is not a problem. "We want an API for rosters" is a solution; the prob
 
 ### 2. De-dupe against the whole backlog
 
-Search OHSI across **all statuses** with `searchJiraIssuesUsingJql` on the problem's nouns and synonyms (not the customer's phrasing alone), plus a semantic pass over near-matching summaries. Three outcomes:
+Search OHSI across **all statuses** with `searchJiraIssuesUsingJql` on the problem's nouns and synonyms (not the customer's phrasing alone), plus a semantic pass over near-matching summaries. Always carry the two mandatory guards from field_standards.md — `issuetype = Idea` plus the archived filter — or the sweep is polluted by Customer records and ~43 archived ideas. Three outcomes:
 
 - **Existing idea covers it.** Propose attaching the signal instead of creating: a comment on the idea carrying the quote, source, and date; a stronger `Customer Signal` value if this signal raises it (per the option ladder in field_standards.md); an added `Source`; and a paste-ready Insight line (description, link, impact 1 to 5) for the human to add natively. Show the idea and the proposed additions; apply on approval.
 - **Related but distinct.** Create the new idea and propose a `Relates` link to the neighbour, so Steering sees the cluster.
@@ -41,6 +41,10 @@ Never silently create a near-duplicate. When unsure, show the closest match and 
 Draft to the JPD Field Standards: a summary to the Title Standard (65-character cap, capability plus outcome), a Problem / Opportunity paragraph carrying the evidence and quote, a Hypothesis / Solution only as firm as the signal supports (a thin hypothesis is honest; an invented one is not), Success Metrics only if the signal implies them, and every required custom field proposed with a one-line rationale. Use the canonical labels. Set `Source` and `Customer Signal` from the actual evidence, not optimism.
 
 Do not inflate: one loud customer is `One customer`, not `Churn risk`. The intake skill sets the evidence bar for everything downstream; overstating signal here corrupts prioritisation everywhere.
+
+### 3a. Connect the customer
+
+If the signal names a customer that has a Customer record in OHSI (issuetype `Customer`), propose a **`Discovery - Connected` issue link** between the record and the idea (new or existing) — that link is the system of record for customer↔idea connections. If the customer has no record, create one **only** if the account is recurring across ideas or strategically weighty (churn risk, flagship, migration anchor); one-off requesters stay as a cited quote on the idea. **Never add customer-name labels** — the link replaces that habit.
 
 ### 4. Present, then create on approval
 

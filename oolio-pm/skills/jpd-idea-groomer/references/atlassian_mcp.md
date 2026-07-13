@@ -73,7 +73,7 @@ After a successful write, confirm to the user with the issue link (`https://ooli
 
 ## Traps
 
-- **Two "Category" fields exist.** The standard's is `customfield_11553`. `customfield_11711` belongs to the Requests view; never write it.
+- **Don't confuse Investment Type with "Category".** The standard's field is `customfield_11553`, renamed from "Category" to **Investment Type** on 2026-07-13. The only field still named "Category" in Jira is `customfield_11711`, which belongs to the Requests view; never write it.
 - **Do not touch the VPC loop fields** (`customfield_11663` through `11677`); they belong to `jpd-loop`.
 - **Never blind-overwrite.** If a field already holds a sensible value, leave it; propose changes only for wrong or missing values.
 - **Description formatting.** JPD renders simply: short paragraphs, bullets only under Success Metrics, no nested lists, no headings deeper than the three standard sections.

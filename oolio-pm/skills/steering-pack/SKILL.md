@@ -17,11 +17,11 @@ One of: a JQL slice (`status = Decision`), a list of keys, a Horizon value, or a
 
 ### 1. Pull the slice
 
-`searchJiraIssuesUsingJql` with `fields: ["*all"]` so the custom fields come back. For each idea capture: summary, status, Strategic Pillar, Category, Source, Customer Signal, Primary Persona, Product Area, Our Objective, Delivery Size, Innovation, Escalate, and the VPC fields where set (Verdict, Confidence, the four rubric scores, Loop State, Sign-off Status).
+`searchJiraIssuesUsingJql` with `fields: ["*all"]` so the custom fields come back, always carrying the two mandatory guards from field_standards.md (`issuetype = Idea` + the archived filter). For each idea capture: summary, status, Strategic Pillar, Investment Type, Source, Customer Signal, Primary Persona, Product Area, Our Objective, Delivery Size, Innovation, Horizon, Escalate, the VPC fields where set (Verdict, Confidence, the four rubric scores, Loop State, Sign-off Status), and whether a **delivery link exists** (a `Polaris work item link` in the issue links — the Delivery status/progress fields are dynamic and read null via the API, so the link is the truth).
 
 ### 2. Fitness check each idea
 
-An idea is **Steering-ready** when its title passes the Title Standard, its description carries the three standard sections, and every required field is set. Run the title check objectively (`${CLAUDE_PLUGIN_ROOT}/skills/jpd-title-standard/scripts/check_titles.py`). Mark each idea **Ready** / **Needs grooming** (list exactly what is missing) / **Not fit** (no problem statement at all). Do not fix anything in this skill; offer `jpd-idea-groomer` or `jpd-title-standard` for the failures, and note that an ungroomed idea going to Steering wastes the room's time.
+An idea is **Steering-ready** when its title passes the Title Standard, its description carries the three standard sections, and every required field is set. An idea in `Ready for delivery` or `In Engineering` with **no delivery link** is flagged as a fitness failure regardless of field completeness. Run the title check objectively (`${CLAUDE_PLUGIN_ROOT}/skills/jpd-title-standard/scripts/check_titles.py`). Mark each idea **Ready** / **Needs grooming** (list exactly what is missing) / **Not fit** (no problem statement at all). Do not fix anything in this skill; offer `jpd-idea-groomer` or `jpd-title-standard` for the failures, and note that an ungroomed idea going to Steering wastes the room's time.
 
 ### 3. Build the pack
 
@@ -37,7 +37,7 @@ Numbered. Decisions that unblock other items first, then by signal strength
 and strategic weight. One line each on why it is placed there.
 
 ## The table
-| Key | Idea (one line) | Pillar | Signal | Size | VPC verdict · confidence | Fit | Ask |
+| Key | Idea (one line) | Pillar | Signal | Size | Horizon | Delivery link? | VPC verdict · confidence | Fit | Ask |
 Each row's "Ask" is the specific decision Steering is being asked to make:
 proceed / park / kill / fund / re-scope. An item with no ask does not belong
 in the pack.
@@ -51,6 +51,15 @@ if any. Open question for the room, if one exists. The ask.
 ## Not fit for this session
 The Needs-grooming and Not-fit items, each with what is missing and who owns
 fixing it before next session.
+
+## Back from the freezer
+Not Now ideas whose "Revisit on" date has passed since the last session, one
+line each: why it was parked, what has changed, re-park (new date) or revive.
+
+## Shipped 90-day checks due
+Ideas that entered Shipped ~90 days ago, each with its Success Metrics and
+whatever measurement exists; the ask is "did it work, and is there a follow-up
+idea?"
 ```
 
 ### 4. Deliver

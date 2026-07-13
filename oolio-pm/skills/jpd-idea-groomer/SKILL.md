@@ -1,6 +1,6 @@
 ---
 name: jpd-idea-groomer
-description: Groom a Jira Product Discovery (JPD) idea end-to-end against Oolio's JPD Field Standards (2026+) — rewrites the summary to `[Action / Capability] + [Outcome / Value]`, restructures the description into Problem / Hypothesis / Success Metrics, and sets every required custom field (Strategic Pillar, Category, Source, Customer Signal, Primary Persona, Product Area, Our Objective, Delivery Size, plus Secondary Personas, Segments, Migration Relevance, Escalate). Trigger PROACTIVELY when the user pastes a JPD URL or key (`OHSI-72`, `IDEA-xx`, `DISC-xx`, `JPD-xx`, a `/browse/OHSI-…` link, or a Polaris idea link) and asks to "groom", "polish", "fix up", "audit", or "get this Steering / roadmap ready". Also trigger when the user references Oolio's JPD field standards, Steering review, or pastes rough idea text to be written up to JPD standard. Prefer over generic writing help when the context smells like product discovery at Oolio.
+description: Groom a Jira Product Discovery (JPD) idea end-to-end against Oolio's JPD Field Standards (2026+) — rewrites the summary to `[Action / Capability] + [Outcome / Value]`, restructures the description into Problem / Hypothesis / Success Metrics, and sets every required custom field (Strategic Pillar, Investment Type, Source, Customer Signal, Primary Persona, Product Area, Our Objective, Delivery Size, plus Secondary Personas, Segments, Migration Relevance, Escalate). Trigger PROACTIVELY when the user pastes a JPD URL or key (`OHSI-72`, `IDEA-xx`, `DISC-xx`, `JPD-xx`, a `/browse/OHSI-…` link, or a Polaris idea link) and asks to "groom", "polish", "fix up", "audit", or "get this Steering / roadmap ready". Also trigger when the user references Oolio's JPD field standards, Steering review, or pastes rough idea text to be written up to JPD standard. Prefer over generic writing help when the context smells like product discovery at Oolio.
 ---
 
 # JPD Idea Groomer
@@ -43,12 +43,14 @@ If the user pasted raw text with no key, skip the fetch and work directly from t
 Grade the idea on three axes before drafting anything:
 
 - **Narrative** — summary, description (Problem, Hypothesis, Success Metrics)
-- **Strategic context** — Strategic Pillar, Category, Our Objective, Product Area
+- **Strategic context** — Strategic Pillar, Investment Type, Our Objective, Product Area, Horizon (proposed only)
 - **Signal & audience** — Source, Customer Signal, Primary Persona, Secondary Personas, Applicable Segments
 - **Delivery framing** — Delivery Size, Migration Relevance, Escalate
 - **Innovation** — Innovation rating (1–5): novelty vs competitors/market, or use of emerging tech
 
 For each item, mark `strong` / `weak` / `missing` / `wrong`. The audit is what drives every later decision — record it.
+
+**Stage-gating:** the full required-field standard applies from **Exploring** onward. An idea still in **Captured** is not failed for missing strategy fields — at intake it only needs a title to standard, a description sketch, and Source. Grooming to the full standard is part of the Exploring entry process (rule recorded on EVITA-80, 13 Jul 2026).
 
 ### 3. Ask before fabricating
 
@@ -115,7 +117,7 @@ Success Metrics
 
 ### Proposed Custom Fields
 - Strategic Pillar (required, multi): <values> — <why>
-- Category (required, single): <value> — <why>
+- Investment Type (required, single): <value> — <why>
 - Source (required, multi): <values> — <why>
 - Customer Signal (required, single): <value> — <why>
 - Primary Persona (required, single): <value> — <why>
@@ -125,7 +127,8 @@ Success Metrics
 - Delivery Size (required, single): <value> — <why>
 - Product Area (required, single): <value> — <why>
 - Our Objective (required, multi): <values> — <why>
-- Migration Relevance (optional): <Yes/No or — none —>
+- Horizon (propose only — Steering owns the value): <value> — <why>
+- Migration Relevance (optional, multi): <legacy products (Bepoz/SwiftPOS/IdealPOS/DeliverIT/OrderMate) or — none —>
 - Escalate (tag): <Yes/No>
 
 ### Gaps the user filled in
@@ -236,7 +239,7 @@ Quick reference (required unless marked optional):
 | Field | ID | Type | What to ask |
 |---|---|---|---|
 | Strategic Pillar | `customfield_11552` | multi-select | Which company priority does this serve? At least one. |
-| Category | `customfield_11553` | single-select | Customer problem, product optimisation, new capability, strategic investment? |
+| Investment Type | `customfield_11553` | single-select | Where is the product effort being invested: customer problem, new capability, product optimisation, strategic investment? |
 | Source | `customfield_11554` | multi-select | Where did the signal come from? |
 | Customer Signal | `customfield_11560` | single-select | How strong is the signal? Strongest wins. |
 | Primary Persona | `customfield_11555` | single-select | Who benefits **most**? |
@@ -245,9 +248,10 @@ Quick reference (required unless marked optional):
 | Delivery Size | `customfield_11557` | single-select | Directional effort. Not engineering estimation. |
 | Product Area | `customfield_11561` | single-select | The one primary product domain. |
 | Our Objective | `customfield_11559` | multi-select | Business outcome(s) this supports. |
+| Horizon *(propose only)* | `customfield_11744` | single-select | Roadmap commitment (Under consideration / Later / Next / Now / Shipped / Not planned). The groomer proposes with a rationale; **Steering owns the value** — never set Now/Next unilaterally. |
 | Innovation | `customfield_10505` | rating 1–5 | How novel vs competitors/market, or does it use emerging tech (e.g. AI)? |
 | Migration Relevance *(optional)* | `customfield_11562` | multi-select | Legacy-product picker (Bepoz/SwiftPOS/IdealPOS/DeliverIT/OrderMate) — NOT Yes/No. |
-| Escalate *(tag)* | `customfield_10432` | boolean | Set only for genuine executive/commercial urgency. Do not overuse. |
+| Escalate *(tag)* | `customfield_10432` | number (1/0) | Set only for genuine executive/commercial urgency. Do not overuse. |
 
 ### Innovation rating (1–5)
 
@@ -269,7 +273,7 @@ rating isn't obvious from the idea, ask the user rather than guessing high.
 - Single-select fields: `{"value": "<canonical label>"}`
 - Multi-select fields: `[{"value": "<label>"}, {"value": "<label>"}]`
 - Rating fields (Innovation): a bare number 1–5, e.g. `{"customfield_10505": 4}`
-- Boolean (Escalate, Polaris boolean type): `true` or `false` (fall back to the JPD UI toggle if the API rejects it)
+- Escalate (Polaris boolean stored as Jira type number): write `1`/`0`, never `true`/`false` (fall back to the JPD UI toggle if a `1`/`0` write is rejected)
 
 Always send the canonical labels from `references/field_standards.md`. If you set a label that doesn't exist in the field's option list, the write fails — and the failure message is unhelpful. If you're unsure, fetch a known populated idea (`OHSI-39`, `OHSI-45`, `OHSI-57`, `OHSI-72`, `OHSI-74`) to confirm the exact label string before writing back.
 
