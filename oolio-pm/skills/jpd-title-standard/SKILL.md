@@ -11,7 +11,7 @@ The length budget exists because of real rendering limits, not taste: Tree reque
 
 This skill handles **titles only**. If the description or custom fields need work, hand off to `jpd-idea-groomer`. If the ticket is an epic, hand off to `jira-epic-titler`.
 
-**Evidence first — never trust the current title.** The existing title is a claim, not the truth. Ideas drift: the description, custom fields, linked insights, and comments often describe something sharper (or different) than what the title says. Whenever you have Jira access, read the full idea — description, Source, Primary/Secondary Personas, Product Area, Strategic Pillar, Category, labels, and recent comments — and derive the title from that evidence. If the evidence contradicts the current title, say so in the audit; the rewrite should reflect what the idea actually is, not a polished version of a wrong label.
+**Evidence first — never trust the current title.** The existing title is a claim, not the truth. Ideas drift: the description, custom fields, linked insights, and comments often describe something sharper (or different) than what the title says. Whenever you have Jira access, read the full idea — description, Source, Primary/Secondary Personas, Product Area, Strategic Pillar, Investment Type, labels, and recent comments — and derive the title from that evidence. If the evidence contradicts the current title, say so in the audit; the rewrite should reflect what the idea actually is, not a polished version of a wrong label.
 
 **Draft-only by default.** Always present current → proposed and get approval before writing to Jira. If the user explicitly says "just fix them", write back without the confirm step. Titles are public to the whole business via Tree, so they should not churn silently.
 
@@ -76,10 +76,10 @@ But formatting is only half the job. When a pasted title is vague or a bare noun
 
 ### Mode C — Bulk audit
 
-1. Pull titles:
+1. Pull titles (always with the two mandatory guards from the groomer's field_standards.md — `issuetype = Idea` plus the archived filter — so Customer records and archived ideas stay out of the audit):
    ```
    mcp__atlassian__searchJiraIssuesUsingJql
-     jql: project = <JPD-PROJECT> ORDER BY created DESC
+     jql: project = <JPD-PROJECT> AND issuetype = Idea AND <archived guard> ORDER BY created DESC
      fields: ["summary", "status", "labels"]
    ```
 2. Run every title through `scripts/check_titles.py` to get objective pass/fail per rule.

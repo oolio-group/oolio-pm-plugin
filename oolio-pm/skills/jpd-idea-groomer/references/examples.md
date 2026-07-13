@@ -84,7 +84,7 @@ A centralised stock service that syncs in near real time across all venues and c
 A multi-venue stock idea, well set:
 
 - Strategic Pillar: `Multi-Venue Management`, `Operational Efficiency`
-- Category: `Customer Problem`
+- Investment Type: `Customer Problem`
 - Source: `Customer`, `Support`
 - Customer Signal: `Repeated support trend`
 - Primary Persona: `Multi-site Operator`
