@@ -2,6 +2,14 @@
 
 All notable changes to the **oolio-pm** plugin, newest first. The plugin is versioned **by git commit** (there is no `version` field in the manifests, by design), so new entries are dated rather than numbered. Every change updates this file (see [CLAUDE.md](CLAUDE.md)). Entries below that carry version numbers are the historical record from before the switch.
 
+## 2026-07-20 — New reference: jira-teams, the team assignment map
+
+Skills that create or triage Jira work (issues, epics, initiatives, ideas, incidents, orphan tasks) had no shared way to set the Team field correctly: the field stores an Atlassian team ID (a UUID), not a name. `references/jira-teams.md` is now the canonical map: eleven teams with their IDs, what each team actually owns (often wider than the name suggests, so the rule is match on domain, not name), routing hints, and the guard that a skill leaves the field unset and flags it rather than guessing.
+
+- Known gaps recorded in the file rather than papered over: two teams share the MEL 3 prefix (needs confirming), the location-code reading of the prefixes is unconfirmed, the list is not exhaustive, and there are no leads, members or team-to-project mappings yet.
+- A summary register mirrors it in the vault at `_system/Jira Register/Jira Teams.md`, beside the project register, with the vault README linking the two ("projects say where a ticket lives, teams say who owns it").
+- Skill count unchanged (a reference, not a skill). Not mirrored to the PM Skills page (internal reference, per the mirroring rule).
+
 ## 2026-07-20 — PM Skills Confluence page gains a plain-English changelog; mirroring becomes a maintenance step
 
 The PM Skills page (the team-facing front door, Niel's space) now ends with a "Skills changelog" section: the full history condensed into dated, human-readable entries with the skill count at each point, so teammates can see what arrived when without opening GitHub. The repo CHANGELOG remains the technical record; the page entry is the reader's version.
