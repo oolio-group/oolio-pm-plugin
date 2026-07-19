@@ -10,6 +10,12 @@ Retired content from the **oolio-pm** plugin, kept for reference. Nothing here i
 
 ## What's here
 
+### `discovery-wayfinder-HANDOFF.md`
+The self-contained design brief that `discovery-wayfinder` was built from, the first occupant of `skills-in-progress/`.
+
+- **Retired:** 2026-07-19 (commit-versioned, no number).
+- **Replaced by:** the shipped `skills/discovery-wayfinder/` skill; the brief's open Jira-modelling decisions were resolved with Niel and recorded in the skill's `references/jira-modelling.md`, and the promotion dry-run is at `docs/wayfinder-dry-run-2026-07-19.md`.
+
 ### `storm-subcommittee/`
 The Virtual Product Council's original STORM Subcommittee: five Co-STORM research role files (Perspective Discoverer, Question-Asking Researcher, Grounded Expert, Knowledge Curator, Moderator), plus the README and template. Modelled on Stanford OVAL's STORM and Co-STORM method.
 

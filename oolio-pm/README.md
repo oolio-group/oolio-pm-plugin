@@ -17,6 +17,7 @@ A single Cowork plugin bundling Oolio's product-management skills. Install it on
 - `signal-radar` — synthesises HubSpot, web, and social signal (via Apify) into cited evidence for a JPD idea, or scans the backlog for gaps against real market and customer demand. Syncs every finding into Oolio Brain so research compounds instead of repeating.
 - `competitor-watch` — the standing competitive-intelligence function: one living dossier per competitor in Oolio Brain, weekly delta sweeps over a tiered watchlist, review/community deep-dives for weaknesses, and Fact-Impact-Act battlecards for sales.
 - `win-loss` — mines HubSpot closed-lost and churn data monthly for the real reasons deals are won and lost, cross-examining rep-entered reasons against deal metadata, and routes product gaps to the backlog and competitor patterns to the dossiers.
+- `discovery-wayfinder` — charts a discovery theme too big for one session as a Jira map of decision tickets, worked one decision at a time until the way is clear. Routes research to `storm-research`/`signal-radar`, judgement calls to `grill-me`, and the output to the intake and loop skills.
 
 **The Virtual Product Council**
 
