@@ -1,20 +1,20 @@
-# Oolio PM Plugins
+# Oolio Product OS
 
-The Product team's plugin collection (marketplace) for Cowork. Other Oolio teams keep their own collections; this one is product management.
+The Product team's operating system for Cowork and Claude Code: the plugin collection (marketplace) that carries our skills. Other Oolio teams keep their own collections; this one belongs to Product. The human-readable front door is the **Product Operating System** page on Confluence; this repo is the source of truth it describes.
 
 ## Plugins
 
-- **oolio-pm** — Oolio Product Management. Bundles the Virtual Product Council (convene-vpc and its operator, design, leadership, and STORM subcommittees, plus a snapshot of the persona library), the JPD grooming loop (jpd-loop), idea groomer (jpd-idea-groomer) and title standard (jpd-title-standard), the Jira epic helpers (jira-epic-groomer, jira-epic-titler), and grill-me for stress-testing a plan or decision. Self-contained.
+- **oolio-pm** — the PM toolkit, signal to shipped: feedback intake into JPD, idea grooming, research and competitive intelligence, the Virtual Product Council, PRD writing and grilling, Jira hygiene, Steering packs, the GTM suite, and metrics review. Skill list and count in [oolio-pm/README.md](oolio-pm/README.md); the catalogue with stages in [docs/skills-catalogue.md](docs/skills-catalogue.md). Self-contained.
 
 ## Install (for Oolio teammates)
 
-Install straight from the repo URL. You install once and get updates automatically, because the plugin is versioned by commit (no version numbers to chase). Use exactly one URL: **`oolio-group/oolio-pm-plugin`**. The old `oolio-pm-plugins` (with an `s`) redirects here but registers as a *separate* marketplace, so don't add both.
+Install straight from the repo URL. You install once and get updates automatically, because the plugin is versioned by commit (no version numbers to chase). Use exactly one URL: **`oolio-group/oolio-product-os`**. The repo's earlier names (`oolio-pm-plugin`, `oolio-pm-plugins`) redirect here, but each name registers as a *separate* marketplace, so do not mix them: remove any old entry before adding this one.
 
 **Claude Code (CLI):**
 
 ```
-/plugin marketplace add oolio-group/oolio-pm-plugin
-/plugin install oolio-pm@oolio-pm-plugin
+/plugin marketplace add oolio-group/oolio-product-os
+/plugin install oolio-pm@oolio-product-os
 ```
 
 **Team auto-install (settings.json).** Add this to your Claude Code settings and the plugin registers, enables, and **auto-updates** with no further steps:
@@ -22,23 +22,23 @@ Install straight from the repo URL. You install once and get updates automatical
 ```json
 {
   "extraKnownMarketplaces": {
-    "oolio-pm-plugin": {
-      "source": { "source": "github", "repo": "oolio-group/oolio-pm-plugin" },
+    "oolio-product-os": {
+      "source": { "source": "github", "repo": "oolio-group/oolio-product-os" },
       "autoUpdate": true
     }
   },
-  "enabledPlugins": { "oolio-pm@oolio-pm-plugin": true }
+  "enabledPlugins": { "oolio-pm@oolio-product-os": true }
 }
 ```
 
-**Cowork:** Settings → Plugins → Add plugin → GitHub, and enter `oolio-group/oolio-pm-plugin`. Install **oolio-pm**. If Cowork serves an old version (a known backend cache issue in mid-2026), fall back to the release zip, see [PUBLISHING.md](PUBLISHING.md).
+**Cowork:** Settings → Plugins → Add plugin → GitHub, and enter `oolio-group/oolio-product-os`. Install **oolio-pm**. If Cowork serves an old version (a known backend cache issue in mid-2026), fall back to the release zip, see [PUBLISHING.md](PUBLISHING.md).
 
 The skills then appear in your skill list (for example, ask "convene the VPC"). The current content is always whatever is on `main`; [CHANGELOG.md](CHANGELOG.md) records what changed.
 
 ## Layout
 
 ```
-oolio-pm-plugins/           local folder name; the GitHub repo is oolio-group/oolio-pm-plugin
+oolio-pm-plugins/           local folder name (historical); the GitHub repo is oolio-group/oolio-product-os
 ├── .claude-plugin/
 │   └── marketplace.json    the marketplace manifest Cowork reads (must live here)
 ├── README.md

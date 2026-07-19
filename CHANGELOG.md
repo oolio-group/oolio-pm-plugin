@@ -2,6 +2,16 @@
 
 All notable changes to the **oolio-pm** plugin, newest first. The plugin is versioned **by git commit** (there is no `version` field in the manifests, by design), so new entries are dated rather than numbered. Every change updates this file (see [CLAUDE.md](CLAUDE.md)). Entries below that carry version numbers are the historical record from before the switch.
 
+## 2026-07-20 — The repo becomes the Oolio Product OS
+
+The collection outgrew its name: with the research house, the councils, the GTM suite, the discovery maps, and the brain conventions, "PM plugin" undersold what teammates are actually installing. Renamed before wider sharing rather than after, while the audience is still small.
+
+- **Repo renamed** `oolio-pm-plugin` → **`oolio-product-os`** (human name: Oolio Product OS). GitHub redirects the old URLs. The marketplace identity in `marketplace.json` follows the repo name (the 0.9.1 lesson), `metadata.version` bumped to 3.0.0 per the maintenance rule.
+- **The `oolio-pm` plugin keeps its name, deliberately.** Renaming the plugin would break every installed `oolio-pm@…` reference and every skill namespace for zero user benefit. The framing: the Product OS is the collection; oolio-pm is its first plugin.
+- **The Confluence front door renamed** "PM Skills" → "Product Operating System" (same page id, Confluence redirects the old title's links).
+- README, PUBLISHING.md, CLAUDE.md, pm-compass, and the vault's registers updated to the new names. Historical CHANGELOG entries are left as written, per the archive rule. Teammates installed under the old marketplace slug should remove it and add `oolio-group/oolio-product-os` fresh; the old slug keeps working via redirect but registers as a separate marketplace.
+- The local working folder keeps its historical name (`~/Documents/Claude/Code/oolio-pm-plugins`); noted in the README layout, as before.
+
 ## 2026-07-20 — New reference: jira-teams, the team assignment map
 
 Skills that create or triage Jira work (issues, epics, initiatives, ideas, incidents, orphan tasks) had no shared way to set the Team field correctly: the field stores an Atlassian team ID (a UUID), not a name. `references/jira-teams.md` is now the canonical map: eleven teams with their IDs, what each team actually owns (often wider than the name suggests, so the rule is match on domain, not name), routing hints, and the guard that a skill leaves the field unset and flags it rather than guessing.

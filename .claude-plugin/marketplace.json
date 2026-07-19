@@ -1,11 +1,11 @@
 {
-  "name": "oolio-pm-plugin",
+  "name": "oolio-product-os",
   "owner": {
     "name": "Niel Cody, Oolio Product"
   },
   "metadata": {
-    "description": "Oolio Product Management plugins.",
-    "version": "2.0.0"
+    "description": "Oolio Product OS: the product operating system plugins.",
+    "version": "3.0.0"
   },
   "plugins": [
     {

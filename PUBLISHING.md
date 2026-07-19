@@ -2,7 +2,7 @@
 
 The whole workflow for editing the **oolio-pm** plugin and getting a new version to your team. You do not need to write code.
 
-GitHub repo (the home of this collection): **`oolio-group/oolio-pm-plugin`** (public). Use exactly that URL everywhere. The old `oolio-pm-plugins` (with an `s`) redirects here but registers as a *separate* marketplace, so never mix the two.
+GitHub repo (the home of this collection): **`oolio-group/oolio-product-os`** (public). Use exactly that URL everywhere. The repo's earlier names (`oolio-pm-plugin`, `oolio-pm-plugins`) redirect here but each registers as a *separate* marketplace, so never mix them.
 
 > **How distribution works.** The plugin is versioned **by git commit** — there are no version numbers in the manifests, on purpose. Every push to `main` is a new version. Anyone installed from the repo URL with auto-update on gets your change on their next session, with nothing to bump and nothing to re-download by hand. This is the officially recommended setup for an actively-edited internal plugin.
 
@@ -12,15 +12,15 @@ GitHub repo (the home of this collection): **`oolio-group/oolio-pm-plugin`** (pu
 
 ### A1. The repo is already published
 
-`oolio-group/oolio-pm-plugin` is live and public, so teammates can install without GitHub org access. Nothing to do here unless you are moving the repo.
+`oolio-group/oolio-product-os` is live and public, so teammates can install without GitHub org access. Nothing to do here unless you are moving the repo.
 
 ### A2. Teammates install once (either surface)
 
 **Claude Code (CLI):**
 
 ```
-/plugin marketplace add oolio-group/oolio-pm-plugin
-/plugin install oolio-pm@oolio-pm-plugin
+/plugin marketplace add oolio-group/oolio-product-os
+/plugin install oolio-pm@oolio-product-os
 ```
 
 **Or, for auto-registration and auto-updates**, add this to Claude Code `settings.json`:
@@ -28,18 +28,18 @@ GitHub repo (the home of this collection): **`oolio-group/oolio-pm-plugin`** (pu
 ```json
 {
   "extraKnownMarketplaces": {
-    "oolio-pm-plugin": {
-      "source": { "source": "github", "repo": "oolio-group/oolio-pm-plugin" },
+    "oolio-product-os": {
+      "source": { "source": "github", "repo": "oolio-group/oolio-product-os" },
       "autoUpdate": true
     }
   },
-  "enabledPlugins": { "oolio-pm@oolio-pm-plugin": true }
+  "enabledPlugins": { "oolio-pm@oolio-product-os": true }
 }
 ```
 
 `"autoUpdate": true` matters: for private marketplaces auto-update is **off** unless you switch it on, which is why updates felt stuck before.
 
-**Cowork:** Settings → Plugins → Add plugin → GitHub → `oolio-group/oolio-pm-plugin` → install **oolio-pm**. See section D if Cowork serves a stale version.
+**Cowork:** Settings → Plugins → Add plugin → GitHub → `oolio-group/oolio-product-os` → install **oolio-pm**. See section D if Cowork serves a stale version.
 
 ---
 
@@ -61,7 +61,7 @@ That's it. On the next session, everyone on auto-update has the change. No relea
 ## C. How anyone installs or updates it
 
 - **Install:** section A2.
-- **Update:** automatic if you added the settings snippet with `"autoUpdate": true`. To force it now: `/plugin update oolio-pm@oolio-pm-plugin` (CLI), or in Cowork re-open the plugin and update.
+- **Update:** automatic if you added the settings snippet with `"autoUpdate": true`. To force it now: `/plugin update oolio-pm@oolio-product-os` (CLI), or in Cowork re-open the plugin and update.
 
 ---
 
@@ -69,7 +69,7 @@ That's it. On the next session, everyone on auto-update has the change. No relea
 
 Cowork is a separate surface from Claude Code and, in mid-2026, its marketplace backend was observed to **snapshot a repo once per URL and not refresh**, serving a frozen old version. The config in this repo is now correct, so this should be retested cleanly:
 
-**One-time Cowork test.** Remove any existing oolio-pm marketplace entry first (both the `oolio-pm-plugin` and `oolio-pm-plugins` slugs if present), then add `oolio-group/oolio-pm-plugin` fresh and install. Check the skill list against [oolio-pm/README.md](oolio-pm/README.md). If it shows the current skill set, the marketplace path works in Cowork and you are done. If it still serves an old version, the freeze is Anthropic-side and the zip fallback below is the reliable path there.
+**One-time Cowork test.** Remove any existing oolio-pm marketplace entry first (the `oolio-product-os`, `oolio-pm-plugin`, and `oolio-pm-plugins` slugs, whichever are present), then add `oolio-group/oolio-product-os` fresh and install. Check the skill list against [oolio-pm/README.md](oolio-pm/README.md). If it shows the current skill set, the marketplace path works in Cowork and you are done. If it still serves an old version, the freeze is Anthropic-side and the zip fallback below is the reliable path there.
 
 **Zip fallback (Cowork only, if the test fails):**
 1. Ask me to *"cut the release zip."* I run `scripts/package-plugin.sh` (it builds `dist/oolio-pm.zip` with the plugin root at the archive root).

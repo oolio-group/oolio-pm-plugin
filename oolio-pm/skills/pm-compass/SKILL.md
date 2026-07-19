@@ -44,7 +44,7 @@ Chains worth knowing: intake → groom → loop → PRD → grill → steering �
 
 ## For someone brand new
 
-Give the two-minute version: the skills are written playbooks the assistant follows against our real tools (Jira, Confluence, HubSpot, the web); a person signs off everything that counts; every claim is cited; findings accumulate in a shared brain so work compounds. Then ask what they're working on and route it. Point them at the PM Skills Confluence page for the full picture.
+Give the two-minute version: the skills are written playbooks the assistant follows against our real tools (Jira, Confluence, HubSpot, the web); a person signs off everything that counts; every claim is cited; findings accumulate in a shared brain so work compounds. Then ask what they're working on and route it. Point them at the Product Operating System Confluence page for the full picture.
 
 ## Rules
 
