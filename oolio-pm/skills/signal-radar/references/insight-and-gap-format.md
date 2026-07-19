@@ -14,6 +14,8 @@ Start from jpd-loop's rubric (5 = decisive, 1 = context only), then apply the so
 
 State which tier an Insight draws from when the impact reason isn't obvious from the description.
 
+**Competitor campaign engagement is a distinct evidence sub-type**: a rival's high-engagement post about a capability (normalised against their own account baseline, per the campaign-mining method in `${CLAUDE_PLUGIN_ROOT}/skills/competitor-watch/references/mining-playbook.md`) is **desirability** evidence for that capability — the market wants the thing. It enters at tier 5 (cap 4/5) and says nothing about feasibility, viability, or whether the competitor's version works; write the Insight so it claims only the demand ("engagement n× their baseline on <capability> — [post](url) — demand signal, not execution proof").
+
 ## Gap report table (Mode B)
 One row per candidate:
 
@@ -23,23 +25,11 @@ One row per candidate:
 
 Order rows by signal strength, strongest first. "Monitor" candidates still get synced to Brain (below) so the next scan can pick up new corroborating signal without starting over.
 
-## Brain sync-entry format
-Whether Mode A or Mode B, every run writes (or extends) a Brain entry. Structure:
+## Brain sync (per research-os)
+The taxonomy, metadata, and linking rules live in `${CLAUDE_PLUGIN_ROOT}/references/research-os.md`; this is how a signal-radar run maps onto them:
 
-```
-# <topic/title — problem, competitor, or trend, whichever is the subject>
+- **One evidence log per run** (`evidence/YYYY-MM-DD-<slug>`): mode and target (JPD key or "gap scan"), the source list (description — URL — tier — date), what was searched and what came up empty. Append-only.
+- **Mode A additionally writes the drafted Insight lines** (description · link · impact · tier) as insights linked to the evidence log — the paste-ready list must survive in Brain, not just in chat — and ingests durable competitor/trend findings onto the relevant dossier or trend page (supersede rule applies).
+- **Mode B additionally updates the gap ledger** (`gaps/ledger`): one row per candidate — status (raised / corroborated / declined / monitored), evidence count, sources, review-by date, and the JPD key once one exists. Monitored candidates get their heartbeat from `competitor-watch` sweeps checking the ledger's review-by dates.
 
-**Date:** <run date>
-**Mode:** idea sync (<JPD key>) | gap scan
-**Summary:** one paragraph — what was found, net of the caveats.
-
-## Sources
-- <description> — <URL> — <tier/date>
-- ...
-
-## Outcome
-<For idea mode: Insight list handed over, count and headline.>
-<For gap scan: candidates surfaced, what happened to each (drafted / attached / monitored), and what was already covered and why it wasn't a gap.>
-```
-
-Check `oolio-brain:wiki-query` before writing: if a page already covers this topic, `wiki-ingest` this run's findings onto it (extend, don't replace) so the page stays the single accumulated record. Only `wiki-new` when nothing existing covers the topic.
+Always `wiki-query` before writing; `wiki-ingest` onto existing pages (extend, don't replace); `wiki-new` only when nothing covers the topic.

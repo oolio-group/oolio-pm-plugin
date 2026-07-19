@@ -19,16 +19,7 @@ Use the connector's CRM search and query tools (`search_crm_objects`, `query_crm
 Query via `oolio-brain:wiki-query` before researching anything external — "what does the brain say about X" — so you're extending existing knowledge, not starting cold. After the run, write findings back per `insight-and-gap-format.md`'s Brain-entry format: `wiki-ingest` onto an existing page if one covers the topic, `wiki-new` if none does. `wiki-lint`/`wiki-status` are Brain's own hygiene tools; use them if a sync looks like it went wrong, not as part of the normal flow.
 
 ## Source reliability tiers (for impact ratings)
-When drafting an Insight or scoring a gap candidate's signal strength, weight the source:
-
-1. **HubSpot, direct and specific** — a named account's deal blocker, churn reason, or repeated request. Highest weight.
-2. **Oolio Brain** — our own settled knowledge, already vetted once.
-3. **Primary competitor/brand source** — their own pricing, docs, or feature page, dated.
-4. **Analyst or industry report** — third-party but rigorous, dated.
-5. **Aggregated social/review signal** — the same complaint or request showing up across multiple independent posts or reviews.
-6. **A single social post, forum comment, or review** — real, but weak alone. Corroborate before leaning on it.
-
-Full impact-cap rules for how this maps to the 1-5 Insight scale are in `insight-and-gap-format.md`.
+The canonical six-tier list lives in `${CLAUDE_PLUGIN_ROOT}/references/research-os.md` (HubSpot-direct at the top, single uncorroborated social post at the bottom, Brain pages at tier 2 only while their status is `verified` — `stale` pages drop to tier 4). Impact-cap rules for mapping tiers onto the 1-5 Insight scale are in `insight-and-gap-format.md`.
 
 ## Citation discipline (hard rules, same as jpd-loop)
 - Every claim used as evidence has a real, working source URL. No link, no Insight.

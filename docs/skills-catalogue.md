@@ -1,6 +1,6 @@
 # Oolio PM — Skills Catalogue
 
-The plugin ships **20 skills**, organised here by where they sit in the product lifecycle,
+The plugin ships **22 skills**, organised here by where they sit in the product lifecycle,
 signal to shipped. The folders under `oolio-pm/skills/` stay flat (that is what the Claude
 Code plugin loader expects). This document is the map; the categories are a reading aid, not
 a folder structure.
@@ -13,7 +13,7 @@ Use it to find the right skill fast, and to see the gaps.
 
 | # | Stage | What it is for | Skills |
 |---|-------|----------------|--------|
-| 1 | Intake & Discovery | Turn raw signal into shaped, groomed ideas | 6 |
+| 1 | Intake & Discovery | Turn raw signal into shaped, groomed ideas | 8 |
 | 2 | Specs & PRDs | Shape ideas into written, pressure-tested specs | 3 |
 | 3 | Validation & Councils | Test decisions against the Virtual Product Council | 4 |
 | 4 | Delivery & Steering | Jira hygiene and executive-facing packs | 3 |
@@ -32,6 +32,8 @@ Turn customer, support, and sales signal into groomed Jira Product Discovery ide
 - **jpd-loop** — Run the full Virtual Product Council grooming loop over a single JPD idea, end to end.
 - **storm-research** — Multi-perspective, citation-verified research briefing (STORM method), delivered as a clean HTML report.
 - **signal-radar** — Synthesise HubSpot, web, and social signal (via Apify) into cited evidence for a JPD idea, or scan the backlog for gaps against real market and customer demand. Syncs findings into Oolio Brain.
+- **competitor-watch** — The standing competitive-intelligence function: per-competitor dossiers in Brain, weekly delta sweeps, review/community deep-dives, and Fact-Impact-Act battlecards.
+- **win-loss** — Mine HubSpot closed-lost and churn data monthly for the real loss drivers, cross-examined against deal metadata; gaps to the backlog, patterns to the dossiers.
 
 ## 2. Specs & PRDs
 
@@ -80,7 +82,7 @@ Skills call on shared reference material that lives outside `skills/`:
 
 - **`personas-library/`** — the *who*: personas, segments, the Virtual Product Council and its sub-panels (Design Council, Operator Council / UAT panel, Leadership Subcommittee).
 - **`products/`** — the *what we sell*: one reference file per Oolio product (`_template.md` is the shape).
-- **`references/`** — the *how we work*: house style, output formats, cross-cutting standards.
+- **`references/`** — the *how we work*: house style, output formats, cross-cutting standards, and `research-os.md`, the operating model the research skills share (Brain taxonomy, cadences, source tiers, the routing pipe).
 
 Where new reference types land (team profiles, process docs, Obsidian routing) is being
 worked out in a dedicated discovery pass. Until then, add to the closest existing folder and
