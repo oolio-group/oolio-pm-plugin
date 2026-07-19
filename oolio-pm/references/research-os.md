@@ -17,19 +17,21 @@ raw signal (web, social, HubSpot, reviews, sweeps)
 
 The agent moves material down the pipe and proposes; the human triages and decides. Discovery output must land as backlog items or idea evidence, not as reports that sit in a folder.
 
-## Brain page taxonomy
+## Brain page taxonomy (the real vault)
 
-Research pages in Brain follow page-per-entity: one page per competitor, per trend, per insight. Questions are sections on an entity's page, never pages of their own. Types:
+The brain is the `my_brain` Obsidian vault (git-backed, one source of truth), whose canonical layout is its own `STRUCTURE.md` and `_system/operating-system.md` — **the vault's rules win** wherever this file and they disagree. Research pages follow page-per-entity: one page per competitor, per trend, per insight. Questions are sections on an entity's page, never pages of their own. Where research output lands:
 
-| Type | Path convention | What it is |
+| Type | Vault home | What it is |
 |---|---|---|
-| Competitor dossier | `competitors/<name>` | One living page per competitor. Schema in `${CLAUDE_PLUGIN_ROOT}/skills/competitor-watch/references/dossier-standard.md`. |
-| Trend page | `trends/<slug>` | One market or technology trend: the claim, the current assessment, linked evidence. |
-| Insight | `insights/<slug>` | One atomic finding: a single observation plus its evidence links and status. Never merge two insights into one page. |
-| Evidence log | `evidence/YYYY-MM-DD-<slug>` | One source capture (a review batch, an article, a scan, a closed-lost analysis). Append-only; never rewritten after creation. |
-| Gap ledger | `gaps/ledger` | The standing list of monitored candidate gaps and open research questions, each with evidence count, review-by date, and status. The research queue. |
+| Competitor dossier | `30 Knowledge/Market/Competitors/<Name>` | The **one canonical page** per competitor, `type: entity`, tag `entity/competitor`. Everything we know about them, across every capability, on one page. Schema in `${CLAUDE_PLUGIN_ROOT}/skills/competitor-watch/references/dossier-standard.md`. Capability domains never copy it; they write a domain-scoped synthesis that links back. |
+| Trend / cross-competitor thesis | `30 Knowledge/Market/` (page at this level) | `type: synthesis` — the landscape read, win/loss theses, where we lead or lag. |
+| Insight | the relevant domain or Market page section, or its own page where genuinely atomic | One finding plus its evidence links and status; `type: concept` or a synthesis section. Never merge two insights. |
+| Evidence log / source capture | `30 Knowledge/Market/Sources/` (or the owning domain's `Sources/`) | One page per source capture (a review batch, a scan, a closed-lost analysis), `type: source`, with provenance. Append-only; never rewritten after creation. |
+| Gap ledger | `01 Command Centre/Gap Ledger` | The standing dashboard of monitored candidate gaps and open research questions: evidence count, review-by date, status, JPD key once routed. The research queue and scoreboard. Create it on first use if absent. |
 
-Brain (the `oolio-brain` plugin) owns final placement and its own linting; pass this structure via `wiki-new`/`wiki-ingest` and defer to Brain's conventions where they differ, flagging the mismatch rather than fighting it.
+Vault-wide rules that bind research pages: every page carries `type:` frontmatter (`source | entity | concept | synthesis | overview`) plus `created`/`updated`, provenance (`sources:` and inline links) is mandatory, page titles are globally unique in Title Case With Spaces, supersession never deletes, and contradictions are flagged, not overwritten. Access the vault through the `oolio-brain` wiki skills (`wiki-query`, `wiki-new`, `wiki-ingest`) where available.
+
+**The operator wall (hard):** research skills may write only the vault's work layers. `20 Areas/Personal` and `10 Projects/Personal` are NO-GO, always, per the vault's STRUCTURE.md §4 — no research run reads or writes them.
 
 **Finding pages again (anti-forking rule):** the paths above are naming conventions, not lookup keys. Always `wiki-query` by topic or title first ("the gap ledger", "the Toast dossier"), using the path only as a hint; and after any `wiki-new`, record the identifier Brain actually assigned (in the run report, and on the gap ledger for ledger-adjacent pages) so the next run finds the same page instead of concluding it doesn't exist and creating a duplicate. A forked ledger or dossier is worse than none — it splits the record silently.
 

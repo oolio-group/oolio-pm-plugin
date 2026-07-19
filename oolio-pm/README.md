@@ -4,6 +4,10 @@ A single Cowork plugin bundling Oolio's product-management skills. Install it on
 
 ## What's inside
 
+**Start here**
+
+- `pm-compass` — the router: describe the task in plain English and it names the one skill (or short chain) that fits, and gives newcomers the two-minute picture.
+
 **Discovery and grooming**
 
 - `feedback-to-idea` — turns raw customer, support, or sales signal into a JPD idea (or attaches it to an existing one), de-duped against the whole backlog.

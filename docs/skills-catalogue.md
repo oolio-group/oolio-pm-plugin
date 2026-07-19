@@ -1,18 +1,26 @@
 # Oolio PM — Skills Catalogue
 
-The plugin ships **22 skills**, organised here by where they sit in the product lifecycle,
+The plugin ships **23 skills**, organised here by where they sit in the product lifecycle,
 signal to shipped. The folders under `oolio-pm/skills/` stay flat (that is what the Claude
 Code plugin loader expects). This document is the map; the categories are a reading aid, not
 a folder structure.
 
-Use it to find the right skill fast, and to see the gaps.
+Use it to find the right skill fast, and to see the gaps. In a session, `pm-compass` is the
+live version of this page: describe the task and it routes you.
+
+**Statuses.** Every skill carries a lifecycle status per
+[references/skill-standard.md](../oolio-pm/references/skill-standard.md): **In progress**
+(lives in `skills-in-progress/`, not shipped), **New** (shipped within the last month or so),
+**Stable**, or **Archived** (in `_archive/`). Unmarked skills below are Stable; there are no
+per-skill version numbers, by design — the plugin versions by commit.
 
 ---
 
-## The six stages
+## The stages
 
 | # | Stage | What it is for | Skills |
 |---|-------|----------------|--------|
+| 0 | Start here | Find the right skill | 1 |
 | 1 | Intake & Discovery | Turn raw signal into shaped, groomed ideas | 8 |
 | 2 | Specs & PRDs | Shape ideas into written, pressure-tested specs | 3 |
 | 3 | Validation & Councils | Test decisions against the Virtual Product Council | 4 |
@@ -21,6 +29,10 @@ Use it to find the right skill fast, and to see the gaps.
 | 6 | Analysis | Close the loop after launch | 1 |
 
 ---
+
+## 0. Start here
+
+- **pm-compass** *(New, July 2026)* — The router: describe the task, get the one skill (or short chain) that fits, and the pipeline picture for newcomers.
 
 ## 1. Intake & Discovery
 
@@ -31,9 +43,9 @@ Turn customer, support, and sales signal into groomed Jira Product Discovery ide
 - **jpd-title-standard** — Groom JPD idea titles to the Title Standard: max 65 characters, sentence case, capability-led.
 - **jpd-loop** — Run the full Virtual Product Council grooming loop over a single JPD idea, end to end.
 - **storm-research** — Multi-perspective, citation-verified research briefing (STORM method), delivered as a clean HTML report.
-- **signal-radar** — Synthesise HubSpot, web, and social signal (via Apify) into cited evidence for a JPD idea, or scan the backlog for gaps against real market and customer demand. Syncs findings into Oolio Brain.
-- **competitor-watch** — The standing competitive-intelligence function: per-competitor dossiers in Brain, weekly delta sweeps, review/community deep-dives, and Fact-Impact-Act battlecards.
-- **win-loss** — Mine HubSpot closed-lost and churn data monthly for the real loss drivers, cross-examined against deal metadata; gaps to the backlog, patterns to the dossiers.
+- **signal-radar** *(New, July 2026)* — Synthesise HubSpot, web, and social signal (via Apify) into cited evidence for a JPD idea, or scan the backlog for gaps against real market and customer demand. Syncs findings into the brain.
+- **competitor-watch** *(New, July 2026)* — The standing competitive-intelligence function: per-competitor dossiers in the brain, weekly delta sweeps, review/community deep-dives, campaign and claim-vs-reality mining, and Fact-Impact-Act battlecards.
+- **win-loss** *(New, July 2026)* — Mine HubSpot closed-lost and churn data monthly for the real loss drivers, cross-examined against deal metadata; gaps to the backlog, patterns to the dossiers.
 
 ## 2. Specs & PRDs
 
@@ -76,13 +88,29 @@ Close the loop once it is live.
 
 ---
 
+## Planned and in-progress work
+
+The candidates the next iteration draws from; each becomes a CHANGELOG entry when it lands
+(or dies quietly if it doesn't earn its place):
+
+- **Grilling engine split** — extract the shared interview loop from `grill-me`/`grill-my-prd`
+  into one engine the wrappers invoke, so the interviewing craft improves in one place.
+- **Discovery wayfinder** — plan discovery work too big for one session as a map of decision
+  tickets (fog-of-war scoping, one decision per session), adapted from the Wayfinder pattern.
+- **setup-oolio** — a one-time per-workspace setup that records Jira project keys, Confluence
+  spaces, and labels in one config the other skills consult instead of hardcoding.
+- **The operator producers** — daily-brief, email-triage, jpd-keeper and the rest of the
+  staged autonomy roadmap live in the operating model
+  ([operating-model_v0.1_2026-07-14.md](operating-model_v0.1_2026-07-14.md)) and the vault's
+  Skills Catalogue; they ship here as they are built.
+
 ## Reference material (not skills)
 
 Skills call on shared reference material that lives outside `skills/`:
 
 - **`personas-library/`** — the *who*: personas, segments, the Virtual Product Council and its sub-panels (Design Council, Operator Council / UAT panel, Leadership Subcommittee).
 - **`products/`** — the *what we sell*: one reference file per Oolio product (`_template.md` is the shape).
-- **`references/`** — the *how we work*: house style, output formats, cross-cutting standards, and `research-os.md`, the operating model the research skills share (Brain taxonomy, cadences, source tiers, the routing pipe).
+- **`references/`** — the *how we work*: house style, output formats, cross-cutting standards, `research-os.md` (the operating model the research skills share: brain taxonomy, cadences, source tiers, the routing pipe), and `skill-standard.md` (how skills themselves are written: trigger specs, lifecycle statuses, the no-op test, the guardrail block).
 
 Where new reference types land (team profiles, process docs, Obsidian routing) is being
 worked out in a dedicated discovery pass. Until then, add to the closest existing folder and
