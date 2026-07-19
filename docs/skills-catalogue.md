@@ -1,6 +1,6 @@
 # Oolio PM — Skills Catalogue
 
-The plugin ships **19 skills**, organised here by where they sit in the product lifecycle,
+The plugin ships **20 skills**, organised here by where they sit in the product lifecycle,
 signal to shipped. The folders under `oolio-pm/skills/` stay flat (that is what the Claude
 Code plugin loader expects). This document is the map; the categories are a reading aid, not
 a folder structure.
@@ -13,7 +13,7 @@ Use it to find the right skill fast, and to see the gaps.
 
 | # | Stage | What it is for | Skills |
 |---|-------|----------------|--------|
-| 1 | Intake & Discovery | Turn raw signal into shaped, groomed ideas | 5 |
+| 1 | Intake & Discovery | Turn raw signal into shaped, groomed ideas | 6 |
 | 2 | Specs & PRDs | Shape ideas into written, pressure-tested specs | 3 |
 | 3 | Validation & Councils | Test decisions against the Virtual Product Council | 4 |
 | 4 | Delivery & Steering | Jira hygiene and executive-facing packs | 3 |
@@ -31,6 +31,7 @@ Turn customer, support, and sales signal into groomed Jira Product Discovery ide
 - **jpd-title-standard** — Groom JPD idea titles to the Title Standard: max 65 characters, sentence case, capability-led.
 - **jpd-loop** — Run the full Virtual Product Council grooming loop over a single JPD idea, end to end.
 - **storm-research** — Multi-perspective, citation-verified research briefing (STORM method), delivered as a clean HTML report.
+- **signal-radar** — Synthesise HubSpot, web, and social signal (via Apify) into cited evidence for a JPD idea, or scan the backlog for gaps against real market and customer demand. Syncs findings into Oolio Brain.
 
 ## 2. Specs & PRDs
 

@@ -15,6 +15,7 @@ House style: `${CLAUDE_PLUGIN_ROOT}/references/house-style.md`. Environment: pro
 - A Slack thread or channel to sweep (via the Slack connector).
 - A HubSpot ticket, deal, or conversation (via the HubSpot connector).
 - A support trend the user describes ("we've had five venues ask for X this month").
+- An approved gap candidate from `signal-radar`'s gap-scan mode (already cited, already checked against the backlog once — still run the de-dupe sweep below, don't skip it).
 
 If a named connector is not available, say so in one line and work from what the user pastes.
 

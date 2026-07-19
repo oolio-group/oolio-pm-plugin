@@ -87,6 +87,9 @@ Indirect competitors / specialists in areas we serve — scour for feature depth
 
 > Notes: prefer AU region pages where they exist (Square `/help/au/en`). Several KBs are login-gated (H&L, SevenRooms, ResDiary) or in-app (MarketMan, Zeller) — use public site/feature/pricing pages in those cases. Not found with a public KB: Craftable, Como, Menulog partner, Nory — revisit. Add more as we go.
 
+## Social signal (optional, deeper)
+Neither this loop nor the connectors above cover social media, review sites, or scaled web scraping. For a decision where that signal matters (a contested Park/Kill, thin internal evidence), run `signal-radar` on the idea first and fold its Insight list into step 3 — it covers HubSpot theme aggregation and social/Apify sources this file doesn't, and syncs findings to Oolio Brain so future loops start ahead.
+
 ## How to search well
 - Start internal (Oolio Brain, Confluence, Slack, HubSpot) — cheaper and more specific — then go external (web) for market/competitor context.
 - Look for **disconfirming** evidence too, not just support. The council's value is the clash.

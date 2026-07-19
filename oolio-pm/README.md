@@ -10,6 +10,7 @@ A single Cowork plugin bundling Oolio's product-management skills. Install it on
 - `jpd-loop` — runs the full Virtual Product Council grooming loop over one JPD idea, end to end, and writes the result back to Jira. Depends on the council skills and `jpd-idea-groomer`, both bundled here.
 - `jpd-idea-groomer` — brings a JPD idea up to Oolio's JPD Field Standards.
 - `jpd-title-standard` — grooms JPD idea titles to the JPD Title Standard (max 65 characters, sentence case, capability-led with a clear outcome). Works on pasted text, a single idea, or in bulk via JQL.
+- `signal-radar` — synthesises HubSpot, web, and social signal (via Apify) into cited evidence for a JPD idea, or scans the backlog for gaps against real market and customer demand. Syncs every finding into Oolio Brain so research compounds instead of repeating.
 
 **The Virtual Product Council**
 

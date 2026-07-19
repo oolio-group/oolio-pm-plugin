@@ -2,6 +2,17 @@
 
 All notable changes to the **oolio-pm** plugin, newest first. The plugin is versioned **by git commit** (there is no `version` field in the manifests, by design), so new entries are dated rather than numbered. Every change updates this file (see [CLAUDE.md](CLAUDE.md)). Entries below that carry version numbers are the historical record from before the switch.
 
+## 2026-07-19 — New skill: signal-radar
+
+Closes the market/social research gap: until now nothing in the plugin pulled HubSpot themes, web trends, or social signal in to strengthen a JPD idea or find what the backlog is missing, and nothing persisted research so it compounded across runs instead of repeating.
+
+- **`signal-radar`** (new, twentieth skill) — two modes. Idea mode takes a JPD key, gathers cited evidence from HubSpot, the web, and social media (via Apify Actors), and hands over a paste-ready Insight list in the same format `jpd-loop` uses, so the two are interchangeable. Gap-scan mode takes no key: snapshots the whole OHSI backlog, scans HubSpot ticket themes, web/competitor trends, and social signal, cross-checks every candidate against the backlog (including Not Now/Rejected ideas, not just open ones) and against Oolio Brain, then hands approved candidates to `feedback-to-idea` rather than drafting them itself.
+- **Brain-first, Brain-last.** Every run queries `oolio-brain:wiki-query` before researching (don't repeat settled knowledge) and writes findings back via `wiki-new`/`wiki-ingest` after (so the next run starts ahead). This is the "keep my data in sync" half of the skill and the reason gap-scans get cheaper over time instead of staying flat cost.
+- **Deliberately narrow write surface.** signal-radar never creates or edits a Jira issue or field itself; it hands off to `jpd-idea-groomer` / `feedback-to-idea` / `jpd-loop`, which already own that logic and its field-standard guards. Keeps one source of truth for backlog writes instead of a second copy drifting in a new skill.
+- **Social-evidence impact cap.** A single scraped social post or review caps at 2/5 impact, aggregated corroborated social signal caps at 4/5 — HubSpot-direct and Brain-vetted evidence remain the only sources that can hit 5/5. Full reliability tiers in `references/signal-sources.md`.
+- Additive cross-links only, no behaviour change to either: `jpd-loop`'s `evidence-sources.md` now points to signal-radar as the optional deeper social/HubSpot-theme pass; `feedback-to-idea` now accepts an approved signal-radar gap candidate as an intake input (still runs its own de-dupe sweep, never skips it).
+- README, plugin.json, marketplace.json, and `docs/skills-catalogue.md` updated: nineteen skills → twenty.
+
 ## 2026-07-14 — Commit-based versioning; repo-URL install restored
 
 Fixes the root cause of edits not reaching the team. The plugin no longer carries a `version` field in either `oolio-pm/.claude-plugin/plugin.json` or the `marketplace.json` plugin entry, so **every commit is a new version** and updates propagate without a manual bump. This also removes the duplicate version pin (it was set in both files; the plugin spec warns against that, as `plugin.json` silently wins and stale numbers block updates).
