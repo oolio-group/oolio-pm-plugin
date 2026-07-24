@@ -101,7 +101,7 @@ Then do the work in the same turn. Do not stop after the interpretation waiting 
 > **Completed** — what was actually done.
 > **Outputs** — where the artifacts, files, decisions, or changes live.
 > **Verified** — how you checked it.
-> **Remaining limitation** — only if a real unresolved blocker exists.
+> **Remaining limitation** — material unresolved limitations, uncertainty, or blockers; omit this line only when none exist.
 
 Do not end with filler such as "Let me know if you need anything else", "I hope this helps", or "Would you like me to continue?". The task should feel finished.
 
